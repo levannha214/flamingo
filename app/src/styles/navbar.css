@@ -1,0 +1,44 @@
+.navbar {
+    background-color: black;
+    color: white;
+    position: fixed;
+    z-index: 3;
+}
+.navbar .logo {
+    align-items: center;
+    font-weight: 550;
+}
+.navbar .menu {
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.navbar .menu button {
+    border: none;
+    font-size: 1rem;
+    align-items: center;
+    font-weight: 600;
+}
+.header {
+    background-color: black;
+        color: white;
+}
+.header div button ,.footer div button{
+    border:  none;
+    background-color: white;
+    font-weight: 600;
+}
+.header div button:hover,
+.footer div button:hover,
+.navbar .menu button:hover {
+    background-color: rgba(255, 255, 255, 75%);
+}
+.dares {
+    background: linear-gradient(to left bottom,rgb(254 1 130),rgb(255 94 176));
+                -webkit-background-clip: text;
+                color: transparent;
+}
+.contact p {
+    font-weight: 600;
+}
+
