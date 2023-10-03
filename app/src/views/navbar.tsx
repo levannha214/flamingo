@@ -18,10 +18,10 @@ const Narbar: React.FC<props> = ({ desktop }) => {
         </div>
       ) : (
         <div className=" d-flex justify-content-end menu">
-          <span>about</span>
-          <span className="mx-5">careers</span>
-          <span>support</span>
-          <span className="mx-5">tiktok</span>
+          <span>About</span>
+          <span className="mx-5">Careers</span>
+          <span>Support</span>
+          <span className="mx-5">Tiktok</span>
           <button className="rounded-pill px-3">get the app</button>
         </div>
       )}

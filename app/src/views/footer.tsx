@@ -155,7 +155,7 @@ const Footer: React.FC<props> = ({ desktop, large, mobile }) => {
                 {index === check ? (
                   <div className="col-sm-12 col-md-12  col-12 mx-4">
                     {res.item.map((ret) => (
-                      <p>{ret}</p>
+                      <p className="menuFooter">{ret}</p>
                     ))}
                   </div>
                 ) : (
@@ -168,7 +168,7 @@ const Footer: React.FC<props> = ({ desktop, large, mobile }) => {
                   {res.title}
                 </h5>
                 {res.item.map((ret) => (
-                  <p>{ret}</p>
+                  <p className="menuFooter">{ret}</p>
                 ))}
               </div>
             )
@@ -196,11 +196,11 @@ const Footer: React.FC<props> = ({ desktop, large, mobile }) => {
               <ArrowDownOutlined />
             ) : (
               <div className="col-xl-8 col-xxl-8 col-md-8 col-lg-8 d-flex justify-content-between">
-                <span>Privacy Policy</span>
-                <span>Terms of Use</span>
-                <span>Purchase Terms</span>
-                <span>Cookies Settings</span>
-                <span> English (United States)</span>
+                <span className="menuFooter">Privacy Policy</span>
+                <span className="menuFooter">Terms of Use</span>
+                <span className="menuFooter">Purchase Terms</span>
+                <span className="menuFooter">Cookies Settings</span>
+                <span className="menuFooter"> English (United States)</span>
               </div>
             )}
             <div className="col-6 col-sm-6 col-xl-4 col-xxl-4 col-md-4 col-lg-4 d-flex justify-content-end">

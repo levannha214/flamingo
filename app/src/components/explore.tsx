@@ -11,9 +11,11 @@ interface porps {
   desktop: boolean;
   mobile: boolean;
   large: boolean;
+  windowCroll: number;
 }
-const Explore: React.FC<porps> = ({ large, desktop, mobile }) => {
+const Explore: React.FC<porps> = ({ large, desktop, mobile, windowCroll }) => {
   const [animation, setAnimation] = useState(false);
+  const [menuTime, setMenutime] = useState(true);
   const [img, setImg] = useState(0);
   const listImage = [
     {
@@ -58,13 +60,15 @@ const Explore: React.FC<porps> = ({ large, desktop, mobile }) => {
         setAnimation(true);
       }, 5000);
     }
-    setTimeout(() => {
-      if (img === 5) {
-        setImg(0);
-      } else {
-        setImg(img + 1);
-      }
-    }, 3000);
+    if (menuTime) {
+      setTimeout(() => {
+        if (img === 5) {
+          setImg(0);
+        } else {
+          setImg(img + 1);
+        }
+      }, 3000);
+    }
   }, [animation, img]);
   return (
     <section className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 bg-black explore">
@@ -195,10 +199,16 @@ const Explore: React.FC<porps> = ({ large, desktop, mobile }) => {
                 }
               >
                 <span
+                  className={index === img ? "nextImg" : "nullImg"}
+                  onMouseOver={() => {
+                    setMenutime(false);
+                    setImg(index);
+                    setTimeout(() => {
+                      setMenutime(true);
+                    }, 3000);
+                  }}
                   style={
-                    index === img
-                      ? { borderBottom: "2px solid white", color: "#ffffff" }
-                      : { color: "#999999" }
+                    index === img ? { color: "#ffffff" } : { color: "#999999" }
                   }
                 >
                   {item.title}

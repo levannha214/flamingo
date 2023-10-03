@@ -4,9 +4,10 @@ import video from "../assets/video/steps-animation-3.mp4";
 interface porps {
   desktop: boolean;
   large: boolean;
+  windowCroll: number;
 }
 //1320
-const MakeMemories: React.FC<porps> = ({ large, desktop }) => {
+const MakeMemories: React.FC<porps> = ({ large, desktop, windowCroll }) => {
   const [animation, setAnimation] = useState(false);
   useEffect(() => {
     if (animation) {
@@ -23,7 +24,7 @@ const MakeMemories: React.FC<porps> = ({ large, desktop }) => {
     <div
       className={
         desktop
-          ? "make-menories  col-sm-12 col-md-12   bg-white p-3"
+          ? "make-menories  col-sm-12 col-md-12   bg-white p-3 "
           : "make-menories  col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 bg-white p-5"
       }
     >
@@ -164,14 +165,7 @@ const MakeMemories: React.FC<porps> = ({ large, desktop }) => {
               >
                 Time to reflect.
               </h5>
-              <button
-                className=" bg-white my-5"
-                style={{
-                  border: "none",
-                  borderBottom: "2px solid black",
-                  fontWeight: 600,
-                }}
-              >
+              <button className=" bg-white my-5 buttonComponent">
                 DOWNLOAD FLAMINGO CARDS
               </button>
             </div>

@@ -16,12 +16,13 @@ const Impactpul: React.FC<porps> = ({ large, desktop, mobile }) => {
       name: "",
       follow: "TikTok",
       title: "Trends and Creators",
-
+      id: "hero1",
       avatar: hero1,
     },
     {
       name: "",
       follow: "X",
+      id: "hero2",
       title: "Tweets and AU",
       avatar: hero2,
     },
@@ -30,6 +31,7 @@ const Impactpul: React.FC<porps> = ({ large, desktop, mobile }) => {
       name: "",
       follow: "Instagram",
       title: "Slides and Tags",
+      id: "hero3",
       avatar: hero3,
     },
   ];
@@ -172,8 +174,8 @@ const Impactpul: React.FC<porps> = ({ large, desktop, mobile }) => {
             style={mobile ? { borderBottom: "1px solid #000" } : {}}
           >
             <div
-              className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 px-5 py-2 "
-              id="hero1"
+              className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  p-2 "
+              id={hero.id}
             >
               <img
                 src={hero.avatar}

@@ -18,27 +18,21 @@
 }
 @keyframes myfirst {
     0% {
-        transform: rotate(5deg) rotateX(90deg) rotateY(10deg);
+        transform: rotateX(90deg) rotate(-15deg);
         color: rgba(000, 000, 000, 10%);
     }
 
-    25% {
-        transform: rotate(4deg) rotateX(70deg) rotateY(8deg);
-        color: rgba(000, 000, 000, 30%);
-    }
+   
 
     50% {
-        transform: rotate(3deg) rotateX(50deg) rotateY(6deg);
+        transform: rotateX(45deg) rotate(-10deg);
         color: rgba(000, 000, 000, 50%);
     }
 
-    75% {
-        transform: rotate(2deg) rotateX(30deg) rotateY(4deg);
-        color: rgba(000, 000, 000, 70%);
-    }
+   
 
     100% {
-        transform: rotate(0deg) rotateX(0deg);
+        transform: rotateX(0deg) rotate(0deg);
         color: rgba(000, 000, 000, 100%);
     }
 }
@@ -51,28 +45,28 @@
 }
 @keyframes myfirstwhite {
     0% {
-        transform: rotate(5deg) rotateX(90deg) rotateY(10deg);
+        transform: rotateX(90deg) rotate(15deg);
         color: rgba(255, 255, 255, 10%);
     }
 
     25% {
-        transform: rotate(4deg) rotateX(70deg) rotateY(8deg);
-    color: rgba(255, 255, 255, 30%);
+        transform: rotateX(70deg);
+    color: rgba(255, 255, 255, 30%) rotate(11deg);
     }
 
     50% {
-        transform: rotate(3deg) rotateX(50deg) rotateY(6deg);
-        color: rgba(255, 255, 255, 50%);
+        transform: rotateX(50deg);
+        color: rgba(255, 255, 255, 50%) rotate(7deg);
     }
 
     75% {
-        transform: rotate(2deg) rotateX(30deg) rotateY(4deg);
-        color: rgba(255, 255, 255, 70%);
+        transform: rotateX(30deg);
+        color: rgba(255, 255, 255, 70%) rotate(3deg);
     }
 
     100% {
-        transform: rotate(0deg) rotateX(0deg);
-    color: rgba(255, 255, 255, 100%);
+        transform:  rotateX(0deg);
+    color: rgba(255, 255, 255, 100%) rotate(0deg);
     }
 }
 .retImg {
@@ -108,15 +102,60 @@
         margin-left: 0px;
     }
 }
-.explore div div span {
-    font-weight: 600;
-    line-height: 0.8;
-}
-.btnExpore {
+.nextImg,.nullImg {
     border: none;
-    border-bottom: 1px solid #ffffff;
+    position: relative;
+    display: inline-block;
+    border: none;
     background: none;
     font-weight: 600;
+}
+
+.nextImg::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scale(1);
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background-color: #ffffff;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+
+}
+
+.nextImg:hover::after {
+    transform: scale(0);
+    transform-origin: bottom left;
+}
+
+.btnExpore {
+    border: none;
+    position: relative;
+        display: inline-block;
+        border: none;
+    background: none;
+    font-weight: 600;
+}
+
+.btnExpore::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scale(1);
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background-color: #ffffff;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+
+}
+
+.btnExpore:hover::after {
+    transform: scale(0);
+    transform-origin: bottom left;
 }
 .better-convos-title ,.connext-with-title{
     font-weight: 600;
@@ -129,21 +168,37 @@
 .better-convos div div button:hover {
     background-color: lightgray;
 }
-.better-convos div div  span {
-    border-bottom: 2px solid #ffffff;
-    font-weight: 500;
-}
+
 .connext-with {
     background-color: rgb(240 235 227);
 }
-.connext-with div div .connext-with-span {
+.connext-with div div .connext-with-span,.buttonComponent {
     font-weight: 600;
-    border-bottom: 2px solid #000;
+    position: relative;
+        display: inline-block;
+    border: none;
 }
+
 .connext-with-text {
     line-height: 0.8;
     font-weight: 600;
-   
+}
+.connext-with div div .connext-with-span::after ,.buttonComponent::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scale(1);
+    height: 2px;
+left: 0;
+ bottom: 0;
+background-color: #000;
+transform-origin: bottom right;
+transition: transform 0.25s ease-out;
+    
+}
+.connext-with div div .connext-with-span:hover:after,.buttonComponent:hover::after {
+transform: scale(0);
+transform-origin: bottom left;
 }
 .impactful {
     background-color: #f8f8f9;
@@ -151,5 +206,60 @@
 .howto {
     background-color: #e8e8e9;
 }
+#hero1 {
+    animation: myfirstclipPath 5s linear 5s infinite alternate;
+overflow: hidden;
+}
+@keyframes myfirstclipPath{
+    0% {
+            clip-path: polygon(36.4274% 6.47935%, 94.1007% 41.1547%, 73.5726% 93.5207%, 15.8993% 68.8453%);
+        }
+    
+        50% {
+            clip-path: polygon(26.4274% 16.47935%, 74.1007% 31.1547%, 63.5726% 79.5207%, 25.8993% 78.8453%);
+        }
+    
+        100% {
+    
+            clip-path: polygon(36.4274% 6.47935%, 94.1007% 41.1547%, 73.5726% 93.5207%, 15.8993% 68.8453%);
+        }
+}
+#hero2 {
+    animation: myfirstclipPath2 5s linear 5s infinite alternate;
+    overflow: hidden;
+}
 
+@keyframes myfirstclipPath2 {
+    0% {
+    clip-path: polygon(26.4274% 6.47935%, 84.1007% 31.1547%, 73.5726% 93.5207%, 15.8993% 68.8453%);
+    }
 
+    50% {
+        clip-path: polygon(16.4274% 16.47935%,64.1007% 21.1547%, 63.5726% 79.5207%, 25.8993% 78.8453%);
+    }
+
+    100% {
+       
+         clip-path: polygon(26.4274% 6.47935%, 84.1007% 31.1547%, 73.5726% 93.5207%, 15.8993% 68.8453%);
+}
+}
+
+#hero3 {
+    animation: myfirstclipPath3 5s linear 5s infinite alternate;
+    overflow: hidden;
+}
+
+@keyframes myfirstclipPath3 {
+    0% {
+        clip-path: polygon(14.7813% 16.3191%, 74.4355% 27.2537%, 85.2187% 83.6809%, 25.5645% 82.7463%);
+    }
+
+    50% {
+        clip-path: polygon(26.4274% 6.47935%, 94.1007% 21.1547%, 63.5726% 69.5207%, 15.8993% 78.8453%);
+    }
+
+    100% {
+
+        clip-path: polygon(14.7813% 16.3191%, 74.4355% 27.2537%, 85.2187% 83.6809%, 25.5645% 82.7463%);
+    }
+}

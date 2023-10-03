@@ -147,7 +147,7 @@ const BetterConvos: React.FC<porps> = ({ large, desktop, mobile }) => {
               {item.title}
               <div>
                 {" "}
-                <span>{item.button}</span>{" "}
+                <span className="btnExpore">{item.button}</span>{" "}
               </div>
             </div>
             <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 p-3">

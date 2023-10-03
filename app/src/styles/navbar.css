@@ -41,4 +41,6 @@
 .contact p {
     font-weight: 600;
 }
-
+.menuFooter:hover {
+    color: #ffffff;
+}

@@ -60,7 +60,12 @@ function App() {
     } else {
       setDestktop(false);
     }
-
+    if (windowDimention.windowWidth < 576) {
+      setMobile(true);
+    } else {
+      setMobile(false);
+    }
+    console.log(windowCroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", detectSize);
@@ -81,7 +86,12 @@ function App() {
         <></>
       )}
       {mobile ? <></> : <MakeMemories desktop={desktop} large={large} />}
-      <Explore desktop={desktop} large={large} mobile={mobile} />
+      <Explore
+        desktop={desktop}
+        large={large}
+        mobile={mobile}
+        windowCroll={windowCroll.windowScroll}
+      />
       <BetterConvos desktop={desktop} large={large} mobile={mobile} />
       <ConnextWith desktop={desktop} large={large} mobile={mobile} />
       <Impactpul desktop={desktop} large={large} mobile={mobile} />
