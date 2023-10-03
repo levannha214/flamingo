@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./assets/font/stylesheet.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, memo } from "react";
 import Narbar from "./views/navbar";
 import Header from "./views/header";
 import Footer from "./views/footer";
@@ -91,4 +91,4 @@ function App() {
   );
 }
 
-export default App;
+export default memo(App);

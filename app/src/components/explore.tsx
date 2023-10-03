@@ -19,26 +19,32 @@ const Explore: React.FC<porps> = ({ large, desktop, mobile }) => {
     {
       url: img1,
       title: "Couple Convos",
+      color: "yellow",
     },
     {
       url: img2,
       title: "Deep Questions",
+      color: "red",
     },
     {
       url: img3,
       title: "Party Challenges",
+      color: "orange",
     },
     {
       url: img4,
       title: "Pregame Dares",
+      color: "blue",
     },
     {
       url: img5,
       title: "Self-Reflection",
+      color: "pink",
     },
     {
       url: img6,
       title: "Friend Convos",
+      color: "green",
     },
   ];
 
@@ -165,7 +171,7 @@ const Explore: React.FC<porps> = ({ large, desktop, mobile }) => {
                 className="m-2 redImg"
                 style={
                   img === index
-                    ? { backgroundColor: "blue", border: "none" }
+                    ? { backgroundColor: item.color, border: "none" }
                     : { backgroundColor: "lightgray", border: "none" }
                 }
               ></button>
