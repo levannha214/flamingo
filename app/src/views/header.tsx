@@ -1,5 +1,5 @@
 import "../styles/navbar.css";
-import img from "../assets/image/create-a-website-1000w.jpg";
+import banner from "../assets/image/explore_banner.png";
 interface props {
   desktop: boolean;
   mobile: boolean;
@@ -32,7 +32,7 @@ const Header: React.FC<props> = ({ desktop, large, mobile }) => {
         </h4>
         <div className="col-12 col-sm-12 col-md-12 my-5 d-flex justify-content-center">
           {mobile ? (
-            <img src={img} alt="" className="col-12 col-sm-12" />
+            <img src={banner} alt="" className="col-12 col-sm-12" />
           ) : (
             <button className="rounded-pill px-5 py-2 ">get the app</button>
           )}

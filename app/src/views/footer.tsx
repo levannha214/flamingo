@@ -1,5 +1,6 @@
-import bannerFooter from "../assets/image/background-2-750w.jpg";
+import bannerFooter from "../assets/image/Rectangle387.png";
 import "../styles/navbar.css";
+import "../styles/scrollLoading.css";
 import logo from "../assets/image/logo_footer.png";
 import { ArrowDownOutlined, ArrowUpOutlined } from "@ant-design/icons";
 import { useState } from "react";
@@ -7,8 +8,9 @@ interface props {
   desktop: boolean;
   mobile: boolean;
   large: boolean;
+  windowCroll: number;
 }
-const Footer: React.FC<props> = ({ desktop, large, mobile }) => {
+const Footer: React.FC<props> = ({ desktop, large, mobile, windowCroll }) => {
   const [check, setCheck] = useState(-1);
   const contact = [
     {
@@ -40,7 +42,13 @@ const Footer: React.FC<props> = ({ desktop, large, mobile }) => {
   return (
     <footer className="col-12 col-sm-12 col-xl-12 col-xxl-12 col-md-12 col-lg-12 p-4  bg-black text-white footer">
       <div className="col-12 col-sm-12 col-md-12 col-xl-12 col-xxl-12  col-lg-12 p-4 d-flex flex-wrap ">
-        <div className="col-12 col-sm-12 col-xl-6 col-xxl-6 col-md-6 col-lg-6">
+        <div
+          className={
+            windowCroll > 10000
+              ? "col-12 col-sm-12 col-xl-6 col-xxl-6 col-md-6 col-lg-6 scrollBlackTextRight"
+              : "col-12 col-sm-12 col-xl-6 col-xxl-6 col-md-6 col-lg-6 waiting-line "
+          }
+        >
           <img
             src={bannerFooter}
             alt="banner footer"
@@ -103,17 +111,36 @@ const Footer: React.FC<props> = ({ desktop, large, mobile }) => {
                 : "col-xl-6 col-xxl-6 col-lg-6  p-4"
             }
           >
-            <h1
+            <div
               style={
-                large
-                  ? { fontSize: "3rem", lineHeight: 0.9 }
-                  : { fontSize: "4rem", lineHeight: 0.8 }
+                windowCroll > 10000 ? { color: "#ffffff" } : { color: "#000" }
               }
+              className={windowCroll > 10000 ? "scrollWhiteTextRight" : ""}
             >
-              DOWNLOAD<br></br> FLAMINGO CARDS <br></br>TODAY
-            </h1>
-            <h5>Available on iOS and Android</h5>
-            <button className="rounded-pill px-4 py-2 my-5">get the app</button>
+              <h1
+                style={
+                  large
+                    ? { fontSize: "3rem", lineHeight: 0.9 }
+                    : { fontSize: "4rem", lineHeight: 0.8 }
+                }
+              >
+                DOWNLOAD<br></br> FLAMINGO CARDS <br></br>TODAY
+              </h1>
+            </div>
+            <h5
+              style={
+                windowCroll > 10050 ? { color: "#ffffff" } : { color: "#000" }
+              }
+              className={windowCroll > 10050 ? "scrollWhiteTextRight" : ""}
+            >
+              Available on iOS and Android
+            </h5>
+            <div className={windowCroll > 10150 ? "scrollWhiteTextRight" : ""}>
+              {" "}
+              <button className="rounded-pill px-4 py-2 my-5">
+                get the app
+              </button>
+            </div>
           </div>
         )}
       </div>
@@ -121,7 +148,13 @@ const Footer: React.FC<props> = ({ desktop, large, mobile }) => {
         {large ? (
           <></>
         ) : (
-          <div className="col-xxl-2 col-xl-2 col-lg-2 px-4">
+          <div
+            className={
+              windowCroll > 10400
+                ? "col-xxl-2 col-xl-2 col-lg-2 px-4 scrollBlackTextRight"
+                : "col-xxl-2 col-xl-2 col-lg-2 px-4  waiting-line "
+            }
+          >
             <img
               src={logo}
               alt="logo footer"
@@ -143,7 +176,16 @@ const Footer: React.FC<props> = ({ desktop, large, mobile }) => {
                 }
               >
                 <div className="col-sm-12 col-md-12  col-12 d-flex justify-content-between">
-                  <h5 className="text-white" style={{ marginBottom: 30 }}>
+                  <h5
+                    className={
+                      windowCroll > 10450 ? "scrollWhiteTextRight" : ""
+                    }
+                    style={
+                      windowCroll > 10450
+                        ? { marginBottom: 30, color: "#ffffff" }
+                        : { marginBottom: 30, color: "#000" }
+                    }
+                  >
                     {res.title}
                   </h5>
                   {index === check ? (
@@ -164,11 +206,27 @@ const Footer: React.FC<props> = ({ desktop, large, mobile }) => {
               </div>
             ) : (
               <div className="col-xl-2 col-xxl-2 col-md-2 col-lg-2 p-2">
-                <h5 className="text-white" style={{ marginBottom: 30 }}>
+                <h5
+                  className={windowCroll > 10450 ? "scrollWhiteTextRight" : ""}
+                  style={
+                    windowCroll > 10450
+                      ? { marginBottom: 30, color: "#ffffff" }
+                      : { marginBottom: 30, color: "#000" }
+                  }
+                >
                   {res.title}
                 </h5>
                 {res.item.map((ret) => (
-                  <p className="menuFooter">{ret}</p>
+                  <p
+                    className={
+                      windowCroll > 10500 + index * 50
+                        ? "scrollWhiteTextRight menuFooter"
+                        : "text-dark"
+                    }
+                    style={{ marginBottom: 30 }}
+                  >
+                    {ret}
+                  </p>
                 ))}
               </div>
             )
@@ -195,7 +253,13 @@ const Footer: React.FC<props> = ({ desktop, large, mobile }) => {
             {desktop ? (
               <ArrowDownOutlined />
             ) : (
-              <div className="col-xl-8 col-xxl-8 col-md-8 col-lg-8 d-flex justify-content-between">
+              <div
+                className={
+                  windowCroll > 10750
+                    ? "col-xl-8 col-xxl-8 col-md-8 col-lg-8 d-flex justify-content-between scrollWhiteTextRight"
+                    : "col-xl-8 col-xxl-8 col-md-8 col-lg-8 d-flex justify-content-between"
+                }
+              >
                 <span className="menuFooter">Privacy Policy</span>
                 <span className="menuFooter">Terms of Use</span>
                 <span className="menuFooter">Purchase Terms</span>
@@ -204,7 +268,16 @@ const Footer: React.FC<props> = ({ desktop, large, mobile }) => {
               </div>
             )}
             <div className="col-6 col-sm-6 col-xl-4 col-xxl-4 col-md-4 col-lg-4 d-flex justify-content-end">
-              <span className="text-white"> © FLAMINGO CRARDS LLC</span>
+              <span
+                className={
+                  windowCroll > 10750
+                    ? "scrollWhiteTextRight text-white"
+                    : "text-dark"
+                }
+              >
+                {" "}
+                © FLAMINGO CRARDS LLC
+              </span>
             </div>
           </div>
         </div>

@@ -65,6 +65,7 @@ function App() {
     } else {
       setMobile(false);
     }
+
     console.log(windowCroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -85,18 +86,51 @@ function App() {
       ) : (
         <></>
       )}
-      {mobile ? <></> : <MakeMemories desktop={desktop} large={large} />}
+      {mobile ? (
+        <></>
+      ) : (
+        <MakeMemories
+          desktop={desktop}
+          large={large}
+          windowCroll={windowCroll.windowScroll}
+        />
+      )}
       <Explore
         desktop={desktop}
         large={large}
         mobile={mobile}
         windowCroll={windowCroll.windowScroll}
       />
-      <BetterConvos desktop={desktop} large={large} mobile={mobile} />
-      <ConnextWith desktop={desktop} large={large} mobile={mobile} />
-      <Impactpul desktop={desktop} large={large} mobile={mobile} />
-      <Howto desktop={desktop} large={large} mobile={mobile} />
-      <Footer desktop={desktop} large={large} mobile={mobile} />
+      <BetterConvos
+        desktop={desktop}
+        large={large}
+        mobile={mobile}
+        windowCroll={windowCroll.windowScroll}
+      />
+      <ConnextWith
+        desktop={desktop}
+        large={large}
+        mobile={mobile}
+        windowCroll={windowCroll.windowScroll}
+      />
+      <Impactpul
+        desktop={desktop}
+        large={large}
+        mobile={mobile}
+        windowCroll={windowCroll.windowScroll}
+      />
+      <Howto
+        desktop={desktop}
+        large={large}
+        mobile={mobile}
+        windowCroll={windowCroll.windowScroll}
+      />
+      <Footer
+        desktop={desktop}
+        large={large}
+        mobile={mobile}
+        windowCroll={windowCroll.windowScroll}
+      />
     </>
   );
 }

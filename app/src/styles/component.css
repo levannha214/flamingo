@@ -21,16 +21,10 @@
         transform: rotateX(90deg) rotate(-15deg);
         color: rgba(000, 000, 000, 10%);
     }
-
-   
-
     50% {
         transform: rotateX(45deg) rotate(-10deg);
         color: rgba(000, 000, 000, 50%);
     }
-
-   
-
     100% {
         transform: rotateX(0deg) rotate(0deg);
         color: rgba(000, 000, 000, 100%);
@@ -205,61 +199,4 @@ transform-origin: bottom left;
 }
 .howto {
     background-color: #e8e8e9;
-}
-#hero1 {
-    animation: myfirstclipPath 5s linear 5s infinite alternate;
-overflow: hidden;
-}
-@keyframes myfirstclipPath{
-    0% {
-            clip-path: polygon(36.4274% 6.47935%, 94.1007% 41.1547%, 73.5726% 93.5207%, 15.8993% 68.8453%);
-        }
-    
-        50% {
-            clip-path: polygon(26.4274% 16.47935%, 74.1007% 31.1547%, 63.5726% 79.5207%, 25.8993% 78.8453%);
-        }
-    
-        100% {
-    
-            clip-path: polygon(36.4274% 6.47935%, 94.1007% 41.1547%, 73.5726% 93.5207%, 15.8993% 68.8453%);
-        }
-}
-#hero2 {
-    animation: myfirstclipPath2 5s linear 5s infinite alternate;
-    overflow: hidden;
-}
-
-@keyframes myfirstclipPath2 {
-    0% {
-    clip-path: polygon(26.4274% 6.47935%, 84.1007% 31.1547%, 73.5726% 93.5207%, 15.8993% 68.8453%);
-    }
-
-    50% {
-        clip-path: polygon(16.4274% 16.47935%,64.1007% 21.1547%, 63.5726% 79.5207%, 25.8993% 78.8453%);
-    }
-
-    100% {
-       
-         clip-path: polygon(26.4274% 6.47935%, 84.1007% 31.1547%, 73.5726% 93.5207%, 15.8993% 68.8453%);
-}
-}
-
-#hero3 {
-    animation: myfirstclipPath3 5s linear 5s infinite alternate;
-    overflow: hidden;
-}
-
-@keyframes myfirstclipPath3 {
-    0% {
-        clip-path: polygon(14.7813% 16.3191%, 74.4355% 27.2537%, 85.2187% 83.6809%, 25.5645% 82.7463%);
-    }
-
-    50% {
-        clip-path: polygon(26.4274% 6.47935%, 94.1007% 21.1547%, 63.5726% 69.5207%, 15.8993% 78.8453%);
-    }
-
-    100% {
-
-        clip-path: polygon(14.7813% 16.3191%, 74.4355% 27.2537%, 85.2187% 83.6809%, 25.5645% 82.7463%);
-    }
 }

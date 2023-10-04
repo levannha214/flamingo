@@ -1,11 +1,12 @@
 import "../styles/component.css";
-
+import "../styles/scrollLoading.css";
 interface porps {
   desktop: boolean;
   mobile: boolean;
   large: boolean;
+  windowCroll: number;
 }
-const Howto: React.FC<porps> = ({ desktop }) => {
+const Howto: React.FC<porps> = ({ desktop, windowCroll }) => {
   const text = [
     "Download the app",
     "Make a post using #flamingocards",
@@ -14,29 +15,67 @@ const Howto: React.FC<porps> = ({ desktop }) => {
   return (
     <section className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 ">
       <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-5 howto">
-        <h1 className="connext-with-text">
-          How to join the <br></br>convos that matter.
-        </h1>
+        <div>
+          {" "}
+          <h1
+            className={
+              windowCroll > 8900
+                ? "connext-with-text scrollBlackTextTop"
+                : "connext-with-text"
+            }
+            style={
+              windowCroll > 8900 ? { color: "#000" } : { color: "#e8e8e9" }
+            }
+          >
+            How to join the <br></br>convos that matter.
+          </h1>
+        </div>
         <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 my-5"></div>
-        {text.map((item) => (
+        {text.map((item, index) => (
           <div
-            style={{ borderTop: "2px solid lightgray" }}
+            style={
+              windowCroll > 8900
+                ? { color: "#000", borderTop: "2px solid lightgray" }
+                : { color: "#e8e8e9", borderTop: "2px solid lightgray" }
+            }
             className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-5"
           >
-            <p
-              className="connext-with-text"
-              style={desktop ? { fontSize: "1rem" } : { fontSize: "1.3rem" }}
+            <div
+              style={
+                windowCroll > 9000 + index * 100
+                  ? { color: "#000" }
+                  : { color: "#e8e8e9" }
+              }
             >
-              {item}
-            </p>
+              <p
+                className={
+                  windowCroll > 9000 + index * 100
+                    ? "connext-with-text scrollBlackTextTop"
+                    : "connext-with-text"
+                }
+                style={desktop ? { fontSize: "1rem" } : { fontSize: "1.3rem" }}
+              >
+                {item}
+              </p>
+            </div>
           </div>
         ))}
       </div>
       <div
         className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-5 question"
-        style={{ height: 500 }}
+        style={
+          windowCroll > 9400
+            ? { height: 500, color: "#000" }
+            : { color: "#ffffff" }
+        }
       >
-        <h1 className="connext-with-text">
+        <h1
+          className={
+            windowCroll > 9400
+              ? "scrollBlackTextTop connext-with-text"
+              : "connext-with-text"
+          }
+        >
           We’ve go you covered<br></br>with the best question.
         </h1>
       </div>
