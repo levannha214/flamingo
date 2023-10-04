@@ -257,11 +257,11 @@ const BetterConvos: React.FC<porps> = ({
         mobile ? (
           <div
             style={{ borderTop: "1px solid #ffffff" }}
-            className="col-12 col-sm-12 "
+            className="col-12 col-sm-12 py-3"
           >
             <div
               className={
-                windowCroll > 1150 + index * 300
+                windowCroll > 1150 + index * 350
                   ? "scrollBlackTextRight "
                   : "waiting-line"
               }
@@ -270,12 +270,12 @@ const BetterConvos: React.FC<porps> = ({
             </div>
             <div
               className={
-                windowCroll > 1300 + index * 300
+                windowCroll > 1300 + index * 350
                   ? "col-12 col-sm-12 p-3 scrollWhiteTextTop"
                   : " col-12 col-sm-12 p-3"
               }
               style={
-                windowCroll > 1300 + index * 300
+                windowCroll > 1300 + index * 350
                   ? { lineHeight: 0.8, color: "#ffffff" }
                   : { color: "rgb(121 138 161)" }
               }

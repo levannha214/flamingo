@@ -439,53 +439,153 @@ const Impactpul: React.FC<porps> = ({
         </div>
       )}
       <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex flex-wrap">
-        {hero.map((hero) => (
-          <div
-            className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 p-3"
-            style={mobile ? { borderBottom: "1px solid #000" } : {}}
-          >
+        {hero.map((hero, index) =>
+          desktop ? (
+            mobile ? (
+              <div
+                className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 p-3"
+                style={mobile ? { borderBottom: "1px solid #000" } : {}}
+              >
+                <div
+                  className={
+                    windowCroll > 4600 + index * 500
+                      ? " col-12 col-sm-12  p-3 p scrollBlackTextRight"
+                      : "col-12 col-sm-12  p-3 waiting-line "
+                  }
+                >
+                  <img
+                    src={hero.avatar}
+                    alt={hero.name}
+                    className="col-12 col-sm-12  "
+                  />
+                </div>
+                <div
+                  style={
+                    windowCroll > 4900 + index * 500
+                      ? { color: "#000" }
+                      : { color: "#f8f8f9" }
+                  }
+                  className={
+                    windowCroll > 4900 + index * 500
+                      ? "col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12  scrollBlackTextTop"
+                      : "col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"
+                  }
+                >
+                  <p
+                    className="connext-with-text"
+                    style={
+                      desktop ? { fontSize: "1.2rem" } : { fontSize: "1.4rem" }
+                    }
+                  >
+                    {hero.follow}
+                  </p>
+                  <p
+                    className="connext-with-text"
+                    style={
+                      desktop ? { fontSize: "1.2rem" } : { fontSize: "1.4rem" }
+                    }
+                  >
+                    {hero.title}
+                  </p>
+                </div>
+              </div>
+            ) : (
+              <div
+                className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 p-3"
+                style={mobile ? { borderBottom: "1px solid #000" } : {}}
+              >
+                <div
+                  className={
+                    windowCroll > 6400
+                      ? " col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  p-5 p scrollBlackTextRight"
+                      : "col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  p-5 waiting-line "
+                  }
+                >
+                  <img
+                    src={hero.avatar}
+                    alt={hero.name}
+                    className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 "
+                  />
+                </div>
+                <div
+                  style={
+                    windowCroll > 6400
+                      ? { color: "#000" }
+                      : { color: "#f8f8f9" }
+                  }
+                  className={
+                    windowCroll > 6400
+                      ? "col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12  scrollBlackTextTop"
+                      : "col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"
+                  }
+                >
+                  <p
+                    className="connext-with-text"
+                    style={
+                      desktop ? { fontSize: "1.2rem" } : { fontSize: "1.4rem" }
+                    }
+                  >
+                    {hero.follow}
+                  </p>
+                  <p
+                    className="connext-with-text"
+                    style={
+                      desktop ? { fontSize: "1.2rem" } : { fontSize: "1.4rem" }
+                    }
+                  >
+                    {hero.title}
+                  </p>
+                </div>
+              </div>
+            )
+          ) : (
             <div
-              className={
-                windowCroll > 8400
-                  ? " col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  p-5 p scrollBlackTextRight"
-                  : "col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  p-5 waiting-line "
-              }
+              className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 p-3"
+              style={mobile ? { borderBottom: "1px solid #000" } : {}}
             >
-              <img
-                src={hero.avatar}
-                alt={hero.name}
-                className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 "
-              />
-            </div>
-            <div
-              style={
-                windowCroll > 8500 ? { color: "#000" } : { color: "#f8f8f9" }
-              }
-              className={
-                windowCroll > 8500
-                  ? "col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12  scrollBlackTextTop"
-                  : "col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"
-              }
-            >
-              <p
-                className="connext-with-text"
-                style={
-                  desktop ? { fontSize: "1.2rem" } : { fontSize: "1.4rem" }
+              <div
+                className={
+                  windowCroll > 8400
+                    ? " col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  p-5 p scrollBlackTextRight"
+                    : "col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  p-5 waiting-line "
                 }
               >
-                {hero.follow}
-              </p>
-              <p
-                className="connext-with-text"
+                <img
+                  src={hero.avatar}
+                  alt={hero.name}
+                  className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 "
+                />
+              </div>
+              <div
                 style={
-                  desktop ? { fontSize: "1.2rem" } : { fontSize: "1.4rem" }
+                  windowCroll > 8500 ? { color: "#000" } : { color: "#f8f8f9" }
+                }
+                className={
+                  windowCroll > 8500
+                    ? "col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12  scrollBlackTextTop"
+                    : "col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"
                 }
               >
-                {hero.title}
-              </p>
+                <p
+                  className="connext-with-text"
+                  style={
+                    desktop ? { fontSize: "1.2rem" } : { fontSize: "1.4rem" }
+                  }
+                >
+                  {hero.follow}
+                </p>
+                <p
+                  className="connext-with-text"
+                  style={
+                    desktop ? { fontSize: "1.2rem" } : { fontSize: "1.4rem" }
+                  }
+                >
+                  {hero.title}
+                </p>
+              </div>
             </div>
-          </div>
-        ))}
+          )
+        )}
       </div>
     </section>
   );
