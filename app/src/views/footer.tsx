@@ -8,9 +8,16 @@ interface props {
   desktop: boolean;
   mobile: boolean;
   large: boolean;
+  pc: boolean;
   windowCroll: number;
 }
-const Footer: React.FC<props> = ({ desktop, large, mobile, windowCroll }) => {
+const Footer: React.FC<props> = ({
+  desktop,
+  large,
+  mobile,
+  windowCroll,
+  pc,
+}) => {
   const [check, setCheck] = useState(-1);
   const contact = [
     {
@@ -44,13 +51,7 @@ const Footer: React.FC<props> = ({ desktop, large, mobile, windowCroll }) => {
       <div className="col-12 col-sm-12 col-md-12 col-xl-12 col-xxl-12  col-lg-12 p-4 d-flex flex-wrap ">
         {desktop ? (
           mobile ? (
-            <div
-              className={
-                windowCroll > 7200
-                  ? "col-12 col-sm-12 col-xl-6 col-xxl-6 col-md-6 col-lg-6 scrollBlackTextRight"
-                  : "col-12 col-sm-12 col-xl-6 col-xxl-6 col-md-6 col-lg-6 waiting-line "
-              }
-            >
+            <div className="col-12 col-sm-12 col-xl-6 col-xxl-6 col-md-6 col-lg-6">
               <img
                 src={bannerFooter}
                 alt="banner footer"
@@ -58,13 +59,7 @@ const Footer: React.FC<props> = ({ desktop, large, mobile, windowCroll }) => {
               />
             </div>
           ) : (
-            <div
-              className={
-                windowCroll > 8400
-                  ? "col-12 col-sm-12 col-xl-6 col-xxl-6 col-md-6 col-lg-6 scrollBlackTextRight"
-                  : "col-12 col-sm-12 col-xl-6 col-xxl-6 col-md-6 col-lg-6 waiting-line "
-              }
-            >
+            <div className="col-12 col-sm-12 col-xl-6 col-xxl-6 col-md-6 col-lg-6">
               <img
                 src={bannerFooter}
                 alt="banner footer"
@@ -73,13 +68,7 @@ const Footer: React.FC<props> = ({ desktop, large, mobile, windowCroll }) => {
             </div>
           )
         ) : (
-          <div
-            className={
-              windowCroll > 10000
-                ? "col-12 col-sm-12 col-xl-6 col-xxl-6 col-md-6 col-lg-6 scrollBlackTextRight"
-                : "col-12 col-sm-12 col-xl-6 col-xxl-6 col-md-6 col-lg-6 waiting-line "
-            }
-          >
+          <div className="col-12 col-sm-12 col-xl-6 col-xxl-6 col-md-6 col-lg-6">
             <img
               src={bannerFooter}
               alt="banner footer"
@@ -144,7 +133,7 @@ const Footer: React.FC<props> = ({ desktop, large, mobile, windowCroll }) => {
               </div>
             </div>
           ) : (
-            <div className="col-12 col-sm-12 col-md-6 col-xl-6 col-xxl-6 col-lg-6  ">
+            <div className="col-12 col-sm-12 col-md-6 col-xl-6 col-xxl-6 col-lg-6">
               <div className=" col-sm-12  col-md-12  px-3 py-2 ">
                 <div
                   style={
@@ -206,6 +195,49 @@ const Footer: React.FC<props> = ({ desktop, large, mobile, windowCroll }) => {
               </div>
             </div>
           )
+        ) : pc ? (
+          <div
+            className={
+              large
+                ? "col-xl-6 col-md-6 col-lg-6  px-4 py-2"
+                : "col-xl-6 col-xxl-6 col-lg-6  p-4"
+            }
+          >
+            <div
+              style={
+                windowCroll > 12600 ? { color: "#ffffff" } : { color: "#000" }
+              }
+              className={windowCroll > 12600 ? "scrollWhiteTextRight" : ""}
+            >
+              <h1
+                style={
+                  large
+                    ? { fontSize: "3rem", lineHeight: 0.9 }
+                    : { fontSize: "4rem", lineHeight: 0.8 }
+                }
+              >
+                DOWNLOAD<br></br> FLAMINGO CARDS <br></br>TODAY
+              </h1>
+            </div>
+            <h5
+              style={
+                windowCroll > 12650 ? { color: "#ffffff" } : { color: "#000" }
+              }
+              className={windowCroll > 12650 ? "scrollWhiteTextRight" : ""}
+            >
+              Available on iOS and Android
+            </h5>
+            <div
+              className={
+                windowCroll > 12700 ? "scrollWhiteTextRight" : "waiting-line"
+              }
+            >
+              {" "}
+              <button className="rounded-pill px-4 py-2 my-5">
+                get the app
+              </button>
+            </div>
+          </div>
         ) : (
           <div
             className={
@@ -255,13 +287,7 @@ const Footer: React.FC<props> = ({ desktop, large, mobile, windowCroll }) => {
         {large ? (
           <></>
         ) : (
-          <div
-            className={
-              windowCroll > 10400
-                ? "col-xxl-2 col-xl-2 col-lg-2 px-4 scrollBlackTextRight"
-                : "col-xxl-2 col-xl-2 col-lg-2 px-4  waiting-line "
-            }
-          >
+          <div className="col-xxl-2 col-xl-2 col-lg-2 px-4 ">
             <img
               src={logo}
               alt="logo footer"
@@ -354,6 +380,31 @@ const Footer: React.FC<props> = ({ desktop, large, mobile, windowCroll }) => {
                   )}
                 </div>
               )
+            ) : pc ? (
+              <div className="col-xl-2 col-xxl-2 col-md-2 col-lg-2 p-2">
+                <h5
+                  className={windowCroll > 13100 ? "scrollWhiteTextRight" : ""}
+                  style={
+                    windowCroll > 13100
+                      ? { marginBottom: 30, color: "#ffffff" }
+                      : { marginBottom: 30, color: "#000" }
+                  }
+                >
+                  {res.title}
+                </h5>
+                {res.item.map((ret) => (
+                  <p
+                    className={
+                      windowCroll > 13100 + index * 50
+                        ? "scrollWhiteTextRight menuFooter"
+                        : "text-dark"
+                    }
+                    style={{ marginBottom: 30 }}
+                  >
+                    {ret}
+                  </p>
+                ))}
+              </div>
             ) : (
               <div className="col-xl-2 col-xxl-2 col-md-2 col-lg-2 p-2">
                 <h5
@@ -440,6 +491,20 @@ const Footer: React.FC<props> = ({ desktop, large, mobile, windowCroll }) => {
           >
             {desktop ? (
               <ArrowDownOutlined />
+            ) : pc ? (
+              <div
+                className={
+                  windowCroll > 13400
+                    ? "col-xl-8 col-xxl-8 col-md-8 col-lg-8 d-flex justify-content-between scrollWhiteTextRight"
+                    : "col-xl-8 col-xxl-8 col-md-8 col-lg-8 d-flex justify-content-between"
+                }
+              >
+                <span className="menuFooter">Privacy Policy</span>
+                <span className="menuFooter">Terms of Use</span>
+                <span className="menuFooter">Purchase Terms</span>
+                <span className="menuFooter">Cookies Settings</span>
+                <span className="menuFooter"> English (United States)</span>
+              </div>
             ) : (
               <div
                 className={
@@ -455,6 +520,7 @@ const Footer: React.FC<props> = ({ desktop, large, mobile, windowCroll }) => {
                 <span className="menuFooter"> English (United States)</span>
               </div>
             )}
+
             <div className="col-6 col-sm-6 col-xl-4 col-xxl-4 col-md-4 col-lg-4 d-flex justify-content-end">
               {desktop ? (
                 mobile ? (
@@ -480,6 +546,17 @@ const Footer: React.FC<props> = ({ desktop, large, mobile, windowCroll }) => {
                     © FLAMINGO CRARDS LLC
                   </span>
                 )
+              ) : pc ? (
+                <span
+                  className={
+                    windowCroll > 13400
+                      ? "scrollWhiteTextRight text-white"
+                      : "text-dark"
+                  }
+                >
+                  {" "}
+                  © FLAMINGO CRARDS LLC
+                </span>
               ) : (
                 <span
                   className={

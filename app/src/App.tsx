@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./assets/font/stylesheet.css";
-import { useEffect, useState, memo } from "react";
+import { useEffect, useState } from "react";
 import Narbar from "./views/navbar";
 import Header from "./views/header";
 import Footer from "./views/footer";
@@ -14,6 +14,8 @@ function App() {
   const [desktop, setDestktop] = useState(false);
   const [mobile, setMobile] = useState(false);
   const [large, setLarge] = useState(false);
+  const [pc, setPc] = useState(false);
+  const screenHeight = window.screen.availHeight;
   const [windowDimention, setWindowDimention] = useState({
     windowWidth: window.innerWidth,
   });
@@ -25,6 +27,11 @@ function App() {
     setWindowDimention({
       windowWidth: window.innerWidth,
     });
+    if (windowDimention.windowWidth > 1400) {
+      setPc(true);
+    } else {
+      setLarge(false);
+    }
     if (windowDimention.windowWidth < 1200) {
       setLarge(true);
     } else {
@@ -43,13 +50,25 @@ function App() {
     }
   };
   const handleScroll = () => {
-    setWindowCroll({
-      windowScroll: window.scrollY,
-    });
+    if (windowCroll.windowScroll < window.scrollY) {
+      setWindowCroll({
+        windowScroll: window.scrollY,
+      });
+    } else {
+      setWindowCroll(windowCroll);
+    }
   };
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
+
     window.addEventListener("resize", detectSize);
+
+    if (windowDimention.windowWidth > 1400) {
+      setPc(true);
+    } else {
+      setLarge(false);
+    }
     if (windowDimention.windowWidth < 1200) {
       setLarge(true);
     } else {
@@ -65,18 +84,22 @@ function App() {
     } else {
       setMobile(false);
     }
-
     console.log(windowCroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", detectSize);
     };
-  }, [windowDimention, windowCroll, mobile, desktop, large]);
+  }, [windowDimention, windowCroll, mobile, desktop, large, pc]);
   return (
     <>
-      <Narbar desktop={desktop} />
+      <Narbar desktop={desktop} windowCroll={windowCroll.windowScroll} />
 
-      <Header desktop={desktop} large={large} mobile={mobile} />
+      <Header
+        desktop={desktop}
+        large={large}
+        mobile={mobile}
+        screenHeight={screenHeight}
+      />
       {mobile ? (
         <div className="col-12 col-sm-12 p-2 getTheAppMobile">
           <button className=" col-12 col-sm-12 rounded-pill px-5 py-2 ">
@@ -99,40 +122,46 @@ function App() {
         desktop={desktop}
         large={large}
         mobile={mobile}
+        pc={pc}
         windowCroll={windowCroll.windowScroll}
       />
       <BetterConvos
         desktop={desktop}
         large={large}
         mobile={mobile}
+        pc={pc}
         windowCroll={windowCroll.windowScroll}
       />
       <ConnextWith
         desktop={desktop}
         large={large}
         mobile={mobile}
+        pc={pc}
         windowCroll={windowCroll.windowScroll}
       />
       <Impactpul
         desktop={desktop}
         large={large}
         mobile={mobile}
+        pc={pc}
         windowCroll={windowCroll.windowScroll}
       />
       <Howto
         desktop={desktop}
         large={large}
         mobile={mobile}
+        pc={pc}
         windowCroll={windowCroll.windowScroll}
       />
       <Footer
         desktop={desktop}
         large={large}
         mobile={mobile}
+        pc={pc}
         windowCroll={windowCroll.windowScroll}
       />
     </>
   );
 }
 
-export default memo(App);
+export default App;

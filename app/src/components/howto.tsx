@@ -4,9 +4,10 @@ interface porps {
   desktop: boolean;
   mobile: boolean;
   large: boolean;
+  pc: boolean;
   windowCroll: number;
 }
-const Howto: React.FC<porps> = ({ desktop, windowCroll, mobile }) => {
+const Howto: React.FC<porps> = ({ desktop, windowCroll, mobile, pc }) => {
   const text = [
     "Download the app",
     "Make a post using #flamingocards",
@@ -49,6 +50,22 @@ const Howto: React.FC<porps> = ({ desktop, windowCroll, mobile }) => {
               </h1>
             </div>
           )
+        ) : pc ? (
+          <div>
+            {" "}
+            <h1
+              className={
+                windowCroll > 11400
+                  ? "connext-with-text scrollBlackTextTop"
+                  : "connext-with-text"
+              }
+              style={
+                windowCroll > 11400 ? { color: "#000" } : { color: "#e8e8e9" }
+              }
+            >
+              How to join the <br></br>convos that matter.
+            </h1>
+          </div>
         ) : (
           <div>
             {" "}
@@ -130,6 +147,36 @@ const Howto: React.FC<porps> = ({ desktop, windowCroll, mobile }) => {
                 </div>
               </div>
             )
+          ) : pc ? (
+            <div
+              style={
+                windowCroll > 11500 + index * 150
+                  ? { color: "#000", borderTop: "2px solid lightgray" }
+                  : { color: "#e8e8e9", borderTop: "2px solid lightgray" }
+              }
+              className=" col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-5"
+            >
+              <div
+                style={
+                  windowCroll > 11500 + index * 150
+                    ? { color: "#000" }
+                    : { color: "#e8e8e9" }
+                }
+              >
+                <p
+                  className={
+                    windowCroll > 11500 + index * 150
+                      ? "connext-with-text scrollBlackTextTop"
+                      : "connext-with-text"
+                  }
+                  style={
+                    desktop ? { fontSize: "1rem" } : { fontSize: "1.3rem" }
+                  }
+                >
+                  {item}
+                </p>
+              </div>
+            </div>
           ) : (
             <div
               style={
@@ -203,6 +250,25 @@ const Howto: React.FC<porps> = ({ desktop, windowCroll, mobile }) => {
             </h1>{" "}
           </div>
         )
+      ) : pc ? (
+        <div
+          className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-5 question"
+          style={
+            windowCroll > 12000
+              ? { height: 500, color: "#000" }
+              : { color: "#ffffff" }
+          }
+        >
+          <h1
+            className={
+              windowCroll > 12000
+                ? "scrollBlackTextTop connext-with-text"
+                : "connext-with-text"
+            }
+          >
+            We’ve go you covered<br></br>with the best question.
+          </h1>
+        </div>
       ) : (
         <div
           className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-5 question"

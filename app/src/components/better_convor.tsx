@@ -9,6 +9,7 @@ interface porps {
   desktop: boolean;
   mobile: boolean;
   large: boolean;
+  pc: boolean;
   windowCroll: number;
 }
 const BetterConvos: React.FC<porps> = ({
@@ -16,6 +17,7 @@ const BetterConvos: React.FC<porps> = ({
   desktop,
   mobile,
   windowCroll,
+  pc,
 }) => {
   const listItem = [
     {
@@ -209,6 +211,49 @@ const BetterConvos: React.FC<porps> = ({
             </div>
           </div>
         )
+      ) : pc ? (
+        <div className=" col-xl-12 col-xxl-12 col-md-12 col-lg-12">
+          <div className="col-xl-12 col-xxl-12 col-lg-12 my-5">
+            <div
+              className={windowCroll > 4600 ? "scrollWhiteTitle " : ""}
+              style={
+                windowCroll > 4600
+                  ? { color: "#ffffff" }
+                  : { color: "rgb(121 138 161)" }
+              }
+            >
+              <h1
+                className="better-convos-title "
+                style={large ? { fontSize: "6rem" } : { fontSize: "7rem" }}
+              >
+                BETTER CONVOS <br></br>MADE EASY
+              </h1>
+            </div>
+            {text.map((item, index) => (
+              <h5
+                className={
+                  windowCroll > 4700 + index * 50 ? "scrollWhiteTextRight " : ""
+                }
+                style={
+                  windowCroll > 4700 + index * 50
+                    ? { lineHeight: 0.8, color: "#ffffff" }
+                    : { color: "rgb(121 138 161)" }
+                }
+              >
+                {item}
+              </h5>
+            ))}
+            <div
+              className={
+                windowCroll > 4700 ? "scrollBlackTextTop" : "waiting-line"
+              }
+            >
+              <button className="rounded-pill px-4 py-2 my-5">
+                get the app
+              </button>
+            </div>
+          </div>
+        </div>
       ) : (
         <div className=" col-xl-12 col-xxl-12 col-md-12 col-lg-12">
           <div className="col-xl-12 col-xxl-12 col-lg-12 my-5">
@@ -259,15 +304,8 @@ const BetterConvos: React.FC<porps> = ({
             style={{ borderTop: "1px solid #ffffff" }}
             className="col-12 col-sm-12 py-3"
           >
-            <div
-              className={
-                windowCroll > 1150 + index * 350
-                  ? "scrollBlackTextRight "
-                  : "waiting-line"
-              }
-            >
-              <img src={item.image} alt="" className="col-sm-12 col-12 " />
-            </div>
+            <img src={item.image} alt="" className="col-sm-12 col-12 " />
+
             <div
               className={
                 windowCroll > 1300 + index * 350
@@ -329,13 +367,57 @@ const BetterConvos: React.FC<porps> = ({
                 </span>{" "}
               </div>
             </div>
-            <div
-              className={
-                windowCroll > 3100 + index * 300
-                  ? "col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 p-3 scrollWhiteTextRight"
-                  : "col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 p-3 waiting-line"
-              }
-            >
+            <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 p-3">
+              <img
+                src={item.image}
+                alt=""
+                className="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 "
+              />
+            </div>
+          </div>
+        ) : pc ? (
+          <div
+            style={{ borderTop: "1px solid #ffffff" }}
+            className={
+              desktop
+                ? "col-12 col-sm-12 d-flex "
+                : " col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex"
+            }
+          >
+            <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex justify-content-between flex-column py-3">
+              <div
+                className={
+                  windowCroll > 5200 + index * 600 ? "scrollWhiteTextRight" : ""
+                }
+                style={
+                  windowCroll > 5200 + index * 600
+                    ? { color: "#ffffff" }
+                    : { color: "rgb(121 138 161)" }
+                }
+              >
+                {item.title}
+              </div>
+              <div
+                className={
+                  windowCroll > 5600 + index * 600
+                    ? "scrollWhiteTextRight"
+                    : "waiting-line"
+                }
+              >
+                {" "}
+                <span
+                  style={
+                    windowCroll > 5600 + index * 600
+                      ? { color: "#ffffff " }
+                      : { color: "rgb(121 138 161)" }
+                  }
+                  className="btnExpore"
+                >
+                  {item.button}
+                </span>{" "}
+              </div>
+            </div>
+            <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 p-3 ">
               <img
                 src={item.image}
                 alt=""
@@ -383,13 +465,7 @@ const BetterConvos: React.FC<porps> = ({
                 </span>{" "}
               </div>
             </div>
-            <div
-              className={
-                windowCroll > 4200 + index * 400
-                  ? "col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 p-3 scrollWhiteTextRight"
-                  : "col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 p-3 waiting-line"
-              }
-            >
+            <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 p-3 ">
               <img
                 src={item.image}
                 alt=""

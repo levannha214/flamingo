@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import "../styles/component.css";
 import "../styles/scrollLoading.css";
 import img from "../assets/image/makeMemories.png";
@@ -9,19 +8,6 @@ interface porps {
 }
 //1320
 const MakeMemories: React.FC<porps> = ({ large, desktop, windowCroll }) => {
-  const [animation, setAnimation] = useState(false);
-
-  useEffect(() => {
-    if (animation) {
-      setTimeout(() => {
-        setAnimation(false);
-      }, 5000);
-    } else {
-      setTimeout(() => {
-        setAnimation(true);
-      }, 5000);
-    }
-  }, [animation]);
   return (
     <div
       className={
@@ -42,9 +28,7 @@ const MakeMemories: React.FC<porps> = ({ large, desktop, windowCroll }) => {
                 : "col-sm-12 col-md-12 col-lg-12  d-flex justify-content-start  text-white"
             }
           >
-            <span className={animation ? "textAnimation" : ""}>
-              MAKE MEMORIES
-            </span>
+            <span>MAKE MEMORIES</span>
           </div>
           <div
             className={
@@ -53,9 +37,7 @@ const MakeMemories: React.FC<porps> = ({ large, desktop, windowCroll }) => {
                 : " col-sm-12 col-md-12 col-lg-12  d-flex justify-content-end text-white"
             }
           >
-            <span className={animation ? "textAnimation2" : ""}>
-              ONE CARD AT
-            </span>
+            <span>ONE CARD AT</span>
           </div>
           <div
             className={
@@ -65,7 +47,7 @@ const MakeMemories: React.FC<porps> = ({ large, desktop, windowCroll }) => {
             }
           >
             <span className="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2 "></span>
-            <span className={animation ? "textAnimation3" : ""}> A TIME.</span>
+            <span> A TIME.</span>
           </div>
         </div>
       ) : (
@@ -80,9 +62,7 @@ const MakeMemories: React.FC<porps> = ({ large, desktop, windowCroll }) => {
                 : "col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-white d-flex "
             }
           >
-            <span className={animation ? "textAnimation" : ""}>
-              MAKE MEMORIES
-            </span>
+            <span>MAKE MEMORIES</span>
           </div>
           <div
             className={
@@ -91,9 +71,7 @@ const MakeMemories: React.FC<porps> = ({ large, desktop, windowCroll }) => {
                 : "  col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-white  d-flex justify-content-end"
             }
           >
-            <span className={animation ? "textAnimation2" : ""}>
-              ONE CARD AT
-            </span>
+            <span>ONE CARD AT</span>
           </div>
           <div
             className={
@@ -103,35 +81,15 @@ const MakeMemories: React.FC<porps> = ({ large, desktop, windowCroll }) => {
             }
           >
             <span className=" col-md-2 col-lg-2 col-xl-2 col-xxl-2 "></span>
-            <span className={animation ? "textAnimation3" : ""}> A TIME.</span>
+            <span> A TIME.</span>
           </div>
         </div>
       )}
       {desktop ? (
         <div className="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex ">
-          <div
-            className={
-              windowCroll > 400
-                ? "col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex scrollBlackTitle"
-                : "col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex waiting-line"
-            }
-          >
-            <div
-              className={
-                desktop
-                  ? "col-sm-12 col-md-12 py-5 px-2"
-                  : " col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-5"
-              }
-            >
-              <img
-                className={
-                  desktop
-                    ? "col-sm-12 col-md-12   my-5"
-                    : "col-md-12 col-lg-12 col-xl-12 col-xxl-12  "
-                }
-                src={img}
-                alt=""
-              />
+          <div className="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex ">
+            <div className="col-sm-12 col-md-12 p-4 my-3">
+              <img className="col-sm-12 col-md-12   my-5" src={img} alt="" />
             </div>
           </div>
           <div
@@ -241,26 +199,10 @@ const MakeMemories: React.FC<porps> = ({ large, desktop, windowCroll }) => {
         </div>
       ) : (
         <div className="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex ">
-          <div
-            className={
-              windowCroll > 600
-                ? "col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex scrollBlackTitle"
-                : "col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex waiting-line"
-            }
-          >
-            <div
-              className={
-                desktop
-                  ? "col-sm-12 col-md-12 py-5 px-2"
-                  : " col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-5"
-              }
-            >
+          <div className="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex ">
+            <div className=" col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-5">
               <img
-                className={
-                  desktop
-                    ? "col-sm-12 col-md-12   my-5"
-                    : "col-md-12 col-lg-12 col-xl-12 col-xxl-12  "
-                }
+                className="col-md-12 col-lg-12 col-xl-12 col-xxl-12  "
                 src={img}
                 alt=""
               />

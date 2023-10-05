@@ -1,6 +1,6 @@
 import "../styles/component.css";
 import "../styles/scrollLoading.css";
-import { useEffect, useState } from "react";
+
 import fame175 from "../assets/image/connet_with/Frame_175_1.png";
 import fame176 from "../assets/image/connet_with/Frame_176_1.png";
 import fame170 from "../assets/image/connet_with/Frame 170-1_1.png";
@@ -14,6 +14,7 @@ interface porps {
   mobile: boolean;
   large: boolean;
   windowCroll: number;
+  pc: boolean;
 }
 
 const ConnextWith: React.FC<porps> = ({
@@ -21,8 +22,8 @@ const ConnextWith: React.FC<porps> = ({
   desktop,
   mobile,
   windowCroll,
+  pc,
 }) => {
-  const [animation, setAnimation] = useState(false);
   const listItem = [
     {
       title: (
@@ -77,17 +78,7 @@ const ConnextWith: React.FC<porps> = ({
       fameRight: fame172_r,
     },
   ];
-  useEffect(() => {
-    if (animation) {
-      setTimeout(() => {
-        setAnimation(false);
-      }, 5000);
-    } else {
-      setTimeout(() => {
-        setAnimation(true);
-      }, 5000);
-    }
-  }, [animation]);
+
   return (
     <section
       className={
@@ -114,7 +105,7 @@ const ConnextWith: React.FC<porps> = ({
                   : { color: "rgb(240 235 227)" }
               }
             >
-              <span className={animation ? "textAnimation" : ""}>CONNECT</span>
+              <span>CONNECT</span>
             </div>
             <div
               className={
@@ -129,7 +120,7 @@ const ConnextWith: React.FC<porps> = ({
               }
             >
               <span className="col-6 col-sm-6 col-md-6 "></span>
-              <span className={animation ? "textAnimation2" : ""}>WITH...</span>
+              <span>WITH...</span>
             </div>
           </div>
         ) : (
@@ -149,7 +140,7 @@ const ConnextWith: React.FC<porps> = ({
                   : { color: "rgb(240 235 227)" }
               }
             >
-              <span className={animation ? "textAnimation" : ""}>CONNECT</span>
+              <span>CONNECT</span>
             </div>
             <div
               className={
@@ -164,10 +155,51 @@ const ConnextWith: React.FC<porps> = ({
               }
             >
               <span className="col-6 col-sm-6 col-md-6 "></span>
-              <span className={animation ? "textAnimation2" : ""}>WITH...</span>
+              <span>WITH...</span>
             </div>
           </div>
         )
+      ) : pc ? (
+        <div
+          className="  col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex flex-column connext-with-title"
+          style={large ? { fontSize: "7rem" } : { fontSize: "8rem" }}
+        >
+          <div
+            className={
+              windowCroll > 7000
+                ? "col-md-12 col-lg-12 col-xl-12 col-xxl-12  d-flex justify-content-start scrollBlackTitle"
+                : "col-md-12 col-lg-12 col-xl-12 col-xxl-12  d-flex justify-content-start "
+            }
+          >
+            <span
+              style={
+                windowCroll > 7000
+                  ? { color: "#000" }
+                  : { color: "rgb(240 235 227)" }
+              }
+            >
+              CONNECT
+            </span>
+          </div>
+          <div
+            className={
+              windowCroll > 7100
+                ? "col-md-12 col-lg-12 col-xl-12 col-xxl-12  d-flex scrollBlackTitle"
+                : "col-md-12 col-lg-12 col-xl-12 col-xxl-12  d-flex "
+            }
+          >
+            <span className="col-md-6 col-lg-6 col-xl-6 col-xxl-6"></span>
+            <span
+              style={
+                windowCroll > 7100
+                  ? { color: "#000" }
+                  : { color: "rgb(240 235 227)" }
+              }
+            >
+              WITH...
+            </span>
+          </div>
+        </div>
       ) : (
         <div
           className="  col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex flex-column connext-with-title"
@@ -186,7 +218,6 @@ const ConnextWith: React.FC<porps> = ({
                   ? { color: "#000" }
                   : { color: "rgb(240 235 227)" }
               }
-              className={animation ? "textAnimation" : ""}
             >
               CONNECT
             </span>
@@ -205,7 +236,6 @@ const ConnextWith: React.FC<porps> = ({
                   ? { color: "#000" }
                   : { color: "rgb(240 235 227)" }
               }
-              className={animation ? "textAnimation2" : ""}
             >
               WITH...
             </span>
@@ -218,13 +248,7 @@ const ConnextWith: React.FC<porps> = ({
             style={{ borderBottom: "1px solid #000" }}
             className="col-12 col-sm-12 my-3"
           >
-            <div
-              className={
-                windowCroll > 2500 + index * 300
-                  ? "scrollBlackTextRight col-12 col-sm-12  d-flex"
-                  : "col-12 col-sm-12  d-flex waiting-line "
-              }
-            >
+            <div className="col-12 col-sm-12  d-flex">
               <div className="col-6 col-sm-6   p-3">
                 <img src={item.fameleft} alt="" className="col-12 col-sm-12 " />
               </div>
@@ -270,13 +294,7 @@ const ConnextWith: React.FC<porps> = ({
           >
             <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 p-3 ">
               {" "}
-              <div
-                className={
-                  windowCroll > 4100 + index * 300
-                    ? "scrollBlackTextRight col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex"
-                    : "col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex waiting-line "
-                }
-              >
+              <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex">
                 <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6  p-3">
                   <img
                     src={item.fameleft}
@@ -333,6 +351,76 @@ const ConnextWith: React.FC<porps> = ({
               </div>
             </div>
           </div>
+        ) : pc ? (
+          <div
+            style={{ borderBottom: "1px solid #000" }}
+            className={
+              desktop
+                ? "col-12 col-sm-12 py-2 d-flex my-3"
+                : " col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-2 d-flex my-2"
+            }
+          >
+            <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 p-3 ">
+              {" "}
+              <div className="scrollBlackTextRight col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex">
+                <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6  p-3">
+                  <img
+                    src={item.fameleft}
+                    alt=""
+                    className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12"
+                  />
+                </div>
+                <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 p-3">
+                  <img
+                    src={item.fameRight}
+                    alt=""
+                    className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              className={
+                desktop
+                  ? "co-6 col-sm-6 col-md-6 px-3 d-flex justify-content-between flex-column py-3"
+                  : " col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 px-5 d-flex justify-content-between flex-column py-3"
+              }
+            >
+              <div
+                className={
+                  windowCroll > 7300 + index * 550 ? "scrollBlackTextTop" : ""
+                }
+                style={
+                  windowCroll > 7300 + index * 550
+                    ? { color: "#000" }
+                    : { color: "rgb(240 235 227)" }
+                }
+              >
+                {item.title}
+              </div>
+              <div
+                className={
+                  windowCroll > 7700 + index * 550 ? "scrollBlackTextTop" : ""
+                }
+              >
+                {" "}
+                <span
+                  style={
+                    windowCroll > 7700 + index * 550
+                      ? { color: "#000" }
+                      : { color: "rgb(240 235 227)" }
+                  }
+                  className={
+                    windowCroll > 7700 + index * 550
+                      ? "connext-with-span"
+                      : "waiting-line"
+                  }
+                >
+                  {item.button}
+                </span>{" "}
+              </div>
+            </div>
+          </div>
         ) : (
           <div
             style={{ borderBottom: "1px solid #000" }}
@@ -344,13 +432,7 @@ const ConnextWith: React.FC<porps> = ({
           >
             <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 p-3 ">
               {" "}
-              <div
-                className={
-                  windowCroll > 5600 + index * 450
-                    ? "scrollBlackTextRight col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex"
-                    : "col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex"
-                }
-              >
+              <div className="scrollBlackTextRight col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex">
                 <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6  p-3">
                   <img
                     src={item.fameleft}

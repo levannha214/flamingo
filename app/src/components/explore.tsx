@@ -16,9 +16,15 @@ interface porps {
   mobile: boolean;
   large: boolean;
   windowCroll: number;
+  pc: boolean;
 }
-const Explore: React.FC<porps> = ({ large, desktop, mobile, windowCroll }) => {
-  const [animation, setAnimation] = useState(false);
+const Explore: React.FC<porps> = ({
+  large,
+  desktop,
+  mobile,
+  windowCroll,
+  pc,
+}) => {
   const [menuTime, setMenutime] = useState(true);
   const [img, setImg] = useState(0);
   const listImage = [
@@ -55,15 +61,6 @@ const Explore: React.FC<porps> = ({ large, desktop, mobile, windowCroll }) => {
   ];
 
   useEffect(() => {
-    if (animation) {
-      setTimeout(() => {
-        setAnimation(false);
-      }, 5000);
-    } else {
-      setTimeout(() => {
-        setAnimation(true);
-      }, 5000);
-    }
     if (menuTime) {
       setTimeout(() => {
         if (img === 5) {
@@ -73,7 +70,7 @@ const Explore: React.FC<porps> = ({ large, desktop, mobile, windowCroll }) => {
         }
       }, 3000);
     }
-  }, [animation, img]);
+  }, [img]);
   return (
     <section className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 bg-black explore">
       {desktop ? (
@@ -91,7 +88,6 @@ const Explore: React.FC<porps> = ({ large, desktop, mobile, windowCroll }) => {
                 style={
                   windowCroll > 150 ? { color: "#ffffff" } : { color: "#000" }
                 }
-                className={animation ? "textAnimation4" : ""}
               >
                 EXPLORE
               </span>
@@ -109,7 +105,6 @@ const Explore: React.FC<porps> = ({ large, desktop, mobile, windowCroll }) => {
                 style={
                   windowCroll > 200 ? { color: "#ffffff" } : { color: "#000" }
                 }
-                className={animation ? "textAnimation5" : ""}
               >
                 FLAMINGO CARDS
               </span>
@@ -129,7 +124,6 @@ const Explore: React.FC<porps> = ({ large, desktop, mobile, windowCroll }) => {
                 style={
                   windowCroll > 1000 ? { color: "#ffffff" } : { color: "#000" }
                 }
-                className={animation ? "textAnimation4" : ""}
               >
                 EXPLORE
               </span>
@@ -147,13 +141,44 @@ const Explore: React.FC<porps> = ({ large, desktop, mobile, windowCroll }) => {
                 style={
                   windowCroll > 1100 ? { color: "#ffffff" } : { color: "#000" }
                 }
-                className={animation ? "textAnimation5" : ""}
               >
                 FLAMINGO CARDS
               </span>
             </div>
           </div>
         )
+      ) : pc ? (
+        <div className="col-md-12 col-xl-12 col-lg-12 col-xxl-12 p-5">
+          <div
+            className={
+              windowCroll > 1700
+                ? "col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex text-white scrollWhiteTitle"
+                : "col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex waiting-line"
+            }
+            style={
+              large
+                ? { fontSize: "5.5rem", fontWeight: 600, lineHeight: 1 }
+                : { fontSize: "7rem", fontWeight: 600, lineHeight: 1 }
+            }
+          >
+            <span>EXPLORE</span>
+          </div>
+          <div
+            className={
+              windowCroll > 1800
+                ? "col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex text-white scrollWhiteTitle"
+                : "col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex waiting-line"
+            }
+            style={
+              large
+                ? { fontSize: "5.5rem", fontWeight: 600, lineHeight: 1 }
+                : { fontSize: "7rem", fontWeight: 600, lineHeight: 1 }
+            }
+          >
+            <span className="col-md-2 col-lg-2 col-xl-2 col-xxl-2"></span>
+            <span>FLAMINGO CARDS</span>
+          </div>
+        </div>
       ) : (
         <div className="col-md-12 col-xl-12 col-lg-12 col-xxl-12 p-5">
           <div
@@ -168,7 +193,7 @@ const Explore: React.FC<porps> = ({ large, desktop, mobile, windowCroll }) => {
                 : { fontSize: "7rem", fontWeight: 600, lineHeight: 1 }
             }
           >
-            <span className={animation ? "textAnimation4" : ""}>EXPLORE</span>
+            <span>EXPLORE</span>
           </div>
           <div
             className={
@@ -183,9 +208,7 @@ const Explore: React.FC<porps> = ({ large, desktop, mobile, windowCroll }) => {
             }
           >
             <span className="col-md-2 col-lg-2 col-xl-2 col-xxl-2"></span>
-            <span className={animation ? "textAnimation5" : ""}>
-              FLAMINGO CARDS
-            </span>
+            <span>FLAMINGO CARDS</span>
           </div>
         </div>
       )}
@@ -193,13 +216,7 @@ const Explore: React.FC<porps> = ({ large, desktop, mobile, windowCroll }) => {
         <></>
       ) : desktop ? (
         <div className="col-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 bg-back text-white p-5 d-flex justify-content-center">
-          <div
-            className={
-              windowCroll > 1300
-                ? "col-sm-12 col-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 scrollBlackTextRight"
-                : "col-sm-12 col-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 waiting-line"
-            }
-          >
+          <div className="col-sm-12 col-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
             <img
               src={banner}
               alt=""
@@ -209,13 +226,7 @@ const Explore: React.FC<porps> = ({ large, desktop, mobile, windowCroll }) => {
         </div>
       ) : (
         <div className="col-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 bg-back text-white p-5 d-flex justify-content-center">
-          <div
-            className={
-              windowCroll > 1750
-                ? "col-sm-12 col-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 scrollBlackTextRight"
-                : "col-sm-12 col-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 waiting-line"
-            }
-          >
+          <div className="col-sm-12 col-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 ">
             <img
               src={banner}
               alt=""
@@ -284,6 +295,29 @@ const Explore: React.FC<porps> = ({ large, desktop, mobile, windowCroll }) => {
             </h5>
           </div>
         </div>
+      ) : pc ? (
+        <div className="col-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 bg-back text-white p-5">
+          <div
+            className={
+              windowCroll > 2900 ? " scrollWhiteTextRight" : "text-black"
+            }
+          >
+            <h1>
+              Question packs<br></br> for every purpose
+            </h1>
+          </div>
+          <div
+            className={
+              windowCroll > 3000 ? " scrollWhiteTextRight" : "text-black"
+            }
+          >
+            <h5>
+              Questions are an integral part of our lives.<br></br>
+              Forming the bedrock of our ability to connect.<br></br>
+              That is why we made flamingo cards.
+            </h5>
+          </div>
+        </div>
       ) : (
         <div className="col-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 bg-back text-white p-5">
           <div
@@ -310,13 +344,7 @@ const Explore: React.FC<porps> = ({ large, desktop, mobile, windowCroll }) => {
       )}
 
       {mobile ? (
-        <div
-          className={
-            windowCroll > 400
-              ? "col-12 col-sm-12 p-3  scrollBlackTextRight"
-              : " col-12 col-sm-12 p-3 waiting-line"
-          }
-        >
+        <div className=" col-12 col-sm-12 p-3">
           {listImage.map((item, index) =>
             index === img ? (
               <img
@@ -366,7 +394,33 @@ const Explore: React.FC<porps> = ({ large, desktop, mobile, windowCroll }) => {
                     }
                   >
                     <span
-                      className={index === img ? "nextImg" : "nullImg"}
+                      className={index === img ? "nextImgHover" : "nullImg"}
+                      onMouseOver={() => {
+                        setMenutime(false);
+                        setImg(index);
+                        setTimeout(() => {
+                          setMenutime(true);
+                        }, 3000);
+                      }}
+                      style={
+                        index === img
+                          ? { color: "#ffffff" }
+                          : { color: "#999999" }
+                      }
+                    >
+                      {item.title}
+                    </span>
+                  </div>
+                ) : pc ? (
+                  <div
+                    className={
+                      windowCroll > 3100 + index * 50
+                        ? " scrollWhiteTextRight"
+                        : "text-black "
+                    }
+                  >
+                    <span
+                      className={index === img ? "nextImgHover" : "nullImg"}
                       onMouseOver={() => {
                         setMenutime(false);
                         setImg(index);
@@ -392,7 +446,7 @@ const Explore: React.FC<porps> = ({ large, desktop, mobile, windowCroll }) => {
                     }
                   >
                     <span
-                      className={index === img ? "nextImg" : "nullImg"}
+                      className={index === img ? "nextImgHover" : "nullImg"}
                       onMouseOver={() => {
                         setMenutime(false);
                         setImg(index);
@@ -442,13 +496,7 @@ const Explore: React.FC<porps> = ({ large, desktop, mobile, windowCroll }) => {
             }
           >
             {desktop ? (
-              <div
-                className={
-                  windowCroll > 1900
-                    ? "scrollWhiteTitle col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12"
-                    : "col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 waiting-line"
-                }
-              >
+              <div className="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 ">
                 {listImage.map((item, index) =>
                   index === img ? (
                     <img
@@ -462,13 +510,7 @@ const Explore: React.FC<porps> = ({ large, desktop, mobile, windowCroll }) => {
                 )}
               </div>
             ) : (
-              <div
-                className={
-                  windowCroll > 2300
-                    ? "scrollWhiteTitle col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12"
-                    : "col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 waiting-line"
-                }
-              >
+              <div className="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 ">
                 {listImage.map((item, index) =>
                   index === img ? (
                     <img
@@ -495,13 +537,7 @@ const Explore: React.FC<porps> = ({ large, desktop, mobile, windowCroll }) => {
               : "col-md-12 col-lg-12 col-xl-12 col-xxl-12 bg-back text-white p-5 d-flex"
           }
         >
-          <div
-            className={
-              windowCroll > 2100
-                ? "col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6  scrollWhiteTitle "
-                : "col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 waiting-line"
-            }
-          >
+          <div className="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
             <img
               src={mixed_with}
               alt=""
@@ -547,6 +583,60 @@ const Explore: React.FC<porps> = ({ large, desktop, mobile, windowCroll }) => {
             </div>
           </div>
         </div>
+      ) : pc ? (
+        <div
+          className={
+            desktop
+              ? "col-sm-12 col-md-12 bg-back text-white p-3 d-flex"
+              : "col-md-12 col-lg-12 col-xl-12 col-xxl-12 bg-back text-white p-5 d-flex"
+          }
+        >
+          <div className="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 ">
+            <img
+              src={mixed_with}
+              alt=""
+              className="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12"
+            />
+          </div>
+          <div
+            className={
+              desktop
+                ? "col-sm-6 col-md-6 px-4 "
+                : "col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex p-5 flex-column"
+            }
+          >
+            <div
+              className={
+                windowCroll > 3900 ? " scrollWhiteTextRight" : "waiting-line "
+              }
+            >
+              <h1 style={desktop ? { fontSize: "2rem" } : { fontSize: "3rem" }}>
+                Mixed with <br></br>TikTok Slideshows
+              </h1>
+            </div>
+            <div
+              className={
+                windowCroll > 3950 ? " scrollWhiteTextRight" : "waiting-line "
+              }
+            >
+              <h5
+                style={desktop ? { fontSize: "1rem" } : { fontSize: "1.2rem" }}
+              >
+                Get inspired by a collection of questions<br></br>
+                compiled on TikTok slideshow reels.
+              </h5>
+            </div>
+            <div
+              className={
+                windowCroll > 4000 ? " scrollWhiteTextRight" : "waiting-line "
+              }
+            >
+              <button className="text-white my-3 btnExpore">
+                EXPLORE FLAMINGO’S TIKTOK
+              </button>
+            </div>
+          </div>
+        </div>
       ) : (
         <div
           className={
@@ -555,13 +645,7 @@ const Explore: React.FC<porps> = ({ large, desktop, mobile, windowCroll }) => {
               : "col-md-12 col-lg-12 col-xl-12 col-xxl-12 bg-back text-white p-5 d-flex"
           }
         >
-          <div
-            className={
-              windowCroll > 3100
-                ? "col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6  scrollWhiteTitle "
-                : "col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 waiting-line"
-            }
-          >
+          <div className="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 ">
             <img
               src={mixed_with}
               alt=""

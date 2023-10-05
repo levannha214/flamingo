@@ -1,7 +1,6 @@
 import "../styles/component.css";
 import "../styles/scrollLoading.css";
 import video from "../assets/video/video_flamingo.mp4";
-import { useEffect, useState } from "react";
 import hero1 from "../assets/image/Frame167.png";
 import hero2 from "../assets/image/Frame168.png";
 import hero3 from "../assets/image/Frame169.png";
@@ -9,6 +8,7 @@ interface porps {
   desktop: boolean;
   mobile: boolean;
   large: boolean;
+  pc: boolean;
   windowCroll: number;
 }
 const Impactpul: React.FC<porps> = ({
@@ -16,8 +16,8 @@ const Impactpul: React.FC<porps> = ({
   desktop,
   mobile,
   windowCroll,
+  pc,
 }) => {
-  const [animation, setAnimation] = useState(false);
   const hero = [
     {
       name: "",
@@ -42,17 +42,7 @@ const Impactpul: React.FC<porps> = ({
       avatar: hero3,
     },
   ];
-  useEffect(() => {
-    if (animation) {
-      setTimeout(() => {
-        setAnimation(false);
-      }, 5000);
-    } else {
-      setTimeout(() => {
-        setAnimation(true);
-      }, 5000);
-    }
-  }, [animation]);
+
   return (
     <section
       className={
@@ -78,7 +68,6 @@ const Impactpul: React.FC<porps> = ({
                 style={
                   windowCroll > 4050 ? { color: "#000" } : { color: "#f8f8f9" }
                 }
-                className={animation ? "textAnimation" : ""}
               >
                 IMPACTFUL
               </span>
@@ -91,7 +80,6 @@ const Impactpul: React.FC<porps> = ({
               }
             >
               <span
-                className={animation ? "textAnimation2" : ""}
                 style={
                   windowCroll > 4100 ? { color: "#000" } : { color: "#f8f8f9" }
                 }
@@ -114,7 +102,6 @@ const Impactpul: React.FC<porps> = ({
               }
             >
               <span
-                className={animation ? "textAnimation" : ""}
                 style={
                   windowCroll > 5550 ? { color: "#000" } : { color: "#f8f8f9" }
                 }
@@ -130,7 +117,6 @@ const Impactpul: React.FC<porps> = ({
               }
             >
               <span
-                className={animation ? "textAnimation2" : ""}
                 style={
                   windowCroll > 5600 ? { color: "#000" } : { color: "#f8f8f9" }
                 }
@@ -141,6 +127,39 @@ const Impactpul: React.FC<porps> = ({
             </div>
           </div>
         )
+      ) : pc ? (
+        <div
+          className="  col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex flex-column connext-with-title"
+          style={large ? { fontSize: "8rem" } : { fontSize: "9rem" }}
+        >
+          <div
+            style={
+              windowCroll > 9500 ? { color: "#000" } : { color: "#f8f8f9" }
+            }
+            className={
+              windowCroll > 9500
+                ? "col-md-12 col-lg-12 col-xl-12 col-xxl-12  d-flex justify-content-end scrollBlackTitle"
+                : "col-md-12 col-lg-12 col-xl-12 col-xxl-12  d-flex justify-content-end "
+            }
+          >
+            <span>IMPACTFUL</span>
+          </div>
+          <div
+            className={
+              windowCroll > 9600
+                ? "col-md-12 col-lg-12 col-xl-12 col-xxl-12  d-flex justify-content-center scrollBlackTitle"
+                : "col-md-12 col-lg-12 col-xl-12 col-xxl-12  d-flex justify-content-center"
+            }
+          >
+            <span
+              style={
+                windowCroll > 9600 ? { color: "#000" } : { color: "#f8f8f9" }
+              }
+            >
+              CONVERSATIONS
+            </span>
+          </div>
+        </div>
       ) : (
         <div
           className="  col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex flex-column connext-with-title"
@@ -156,7 +175,7 @@ const Impactpul: React.FC<porps> = ({
                 : "col-md-12 col-lg-12 col-xl-12 col-xxl-12  d-flex justify-content-end "
             }
           >
-            <span className={animation ? "textAnimation" : ""}>IMPACTFUL</span>
+            <span>IMPACTFUL</span>
           </div>
           <div
             className={
@@ -169,7 +188,6 @@ const Impactpul: React.FC<porps> = ({
               style={
                 windowCroll > 7500 ? { color: "#000" } : { color: "#f8f8f9" }
               }
-              className={animation ? "textAnimation2" : ""}
             >
               CONVERSATIONS
             </span>
@@ -181,13 +199,7 @@ const Impactpul: React.FC<porps> = ({
           className="col-12 col-sm-12 my-3"
           style={{ borderBottom: "1px solid #000" }}
         >
-          <div
-            className={
-              windowCroll > 4100
-                ? "col-12 col-sm-12 p-3 scrollBlackTextTop"
-                : "waiting-line col-12 col-sm-12 p-3"
-            }
-          >
+          <div className="col-12 col-sm-12 p-3">
             <video muted autoPlay controls className="col-12 col-sm-12">
               <source src={video} type="video/mp4"></source>
             </video>
@@ -230,13 +242,7 @@ const Impactpul: React.FC<porps> = ({
         >
           <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 p-3 ">
             {" "}
-            <div
-              className={
-                windowCroll > 5700
-                  ? "col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 scrollBlackTextRight"
-                  : "col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 waiting-line"
-              }
-            >
+            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
               <video
                 muted
                 autoPlay
@@ -287,6 +293,67 @@ const Impactpul: React.FC<porps> = ({
             </div>
           </div>
         </div>
+      ) : pc ? (
+        <div
+          className={
+            desktop
+              ? "col-12 col-sm-12 py-2 d-flex my-3"
+              : " col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 py-2 d-flex my-2"
+          }
+        >
+          <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 p-3 ">
+            {" "}
+            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+              <video
+                muted
+                autoPlay
+                controls
+                className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12"
+              >
+                <source src={video} type="video/mp4"></source>
+              </video>
+            </div>
+          </div>
+          <div
+            className={
+              desktop
+                ? "co-6 col-sm-6 col-md-6  py-5 px-2"
+                : " col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 px-5  p-5"
+            }
+          >
+            <div
+              className={windowCroll > 9800 ? "scrollBlackTextTop" : ""}
+              style={
+                windowCroll > 7750 ? { color: "#000" } : { color: "#f8f8f9" }
+              }
+            >
+              <h3
+                className="connext-with-text"
+                style={
+                  desktop ? { fontSize: "2.8rem" } : { fontSize: "3.5rem" }
+                }
+              >
+                {" "}
+                Convos with <br></br>flamingo cards
+              </h3>
+            </div>
+            <div
+              className={windowCroll > 9900 ? "scrollBlackTextTop" : ""}
+              style={
+                windowCroll > 9900 ? { color: "#000" } : { color: "#f8f8f9" }
+              }
+            >
+              {" "}
+              <span
+                className="connext-with-text"
+                style={desktop ? { fontSize: "1rem" } : { fontSize: "1.4rem" }}
+              >
+                Get a feel with #flamingocards across<br></br>
+                several social media platforms.
+              </span>{" "}
+            </div>
+          </div>
+        </div>
       ) : (
         <div
           className={
@@ -297,13 +364,7 @@ const Impactpul: React.FC<porps> = ({
         >
           <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 p-3 ">
             {" "}
-            <div
-              className={
-                windowCroll > 7750
-                  ? "col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 scrollBlackTextRight"
-                  : "col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 waiting-line"
-              }
-            >
+            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
               <video
                 muted
                 autoPlay
@@ -411,6 +472,32 @@ const Impactpul: React.FC<porps> = ({
             </div>
           </div>
         )
+      ) : pc ? (
+        <div
+          className={
+            windowCroll > 10650
+              ? "col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  scrollBlackTextTop"
+              : "col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12"
+          }
+        >
+          <div
+            style={
+              windowCroll > 10650 ? { color: "#000" } : { color: "#f8f8f9" }
+            }
+            className="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 my-5"
+          >
+            <h1
+              className="connext-with-text"
+              style={
+                mobile
+                  ? { fontSize: "1rem", textAlign: "center" }
+                  : { fontSize: "3rem " }
+              }
+            >
+              Explore how others<br></br> interact with<br></br> flamingo cards
+            </h1>
+          </div>
+        </div>
       ) : (
         <div
           className={
@@ -446,13 +533,7 @@ const Impactpul: React.FC<porps> = ({
                 className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 p-3"
                 style={mobile ? { borderBottom: "1px solid #000" } : {}}
               >
-                <div
-                  className={
-                    windowCroll > 4600 + index * 500
-                      ? " col-12 col-sm-12  p-3 p scrollBlackTextRight"
-                      : "col-12 col-sm-12  p-3 waiting-line "
-                  }
-                >
+                <div className=" col-12 col-sm-12  p-3 ">
                   <img
                     src={hero.avatar}
                     alt={hero.name}
@@ -494,13 +575,7 @@ const Impactpul: React.FC<porps> = ({
                 className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 p-3"
                 style={mobile ? { borderBottom: "1px solid #000" } : {}}
               >
-                <div
-                  className={
-                    windowCroll > 6400
-                      ? " col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  p-5 p scrollBlackTextRight"
-                      : "col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  p-5 waiting-line "
-                  }
-                >
+                <div className=" col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  p-5">
                   <img
                     src={hero.avatar}
                     alt={hero.name}
@@ -538,18 +613,46 @@ const Impactpul: React.FC<porps> = ({
                 </div>
               </div>
             )
-          ) : (
-            <div
-              className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 p-3"
-              style={mobile ? { borderBottom: "1px solid #000" } : {}}
-            >
+          ) : pc ? (
+            <div className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 p-3">
+              <div className=" col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  p-5 ">
+                <img
+                  src={hero.avatar}
+                  alt={hero.name}
+                  className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 "
+                />
+              </div>
               <div
+                style={
+                  windowCroll > 11200 ? { color: "#000" } : { color: "#f8f8f9" }
+                }
                 className={
-                  windowCroll > 8400
-                    ? " col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  p-5 p scrollBlackTextRight"
-                    : "col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  p-5 waiting-line "
+                  windowCroll > 11200
+                    ? "col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12  scrollBlackTextTop"
+                    : "col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"
                 }
               >
+                <p
+                  className="connext-with-text"
+                  style={
+                    desktop ? { fontSize: "1.2rem" } : { fontSize: "1.4rem" }
+                  }
+                >
+                  {hero.follow}
+                </p>
+                <p
+                  className="connext-with-text"
+                  style={
+                    desktop ? { fontSize: "1.2rem" } : { fontSize: "1.4rem" }
+                  }
+                >
+                  {hero.title}
+                </p>
+              </div>
+            </div>
+          ) : (
+            <div className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 p-3">
+              <div className=" col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  p-5 ">
                 <img
                   src={hero.avatar}
                   alt={hero.name}

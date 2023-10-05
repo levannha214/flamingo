@@ -1,5 +1,5 @@
 .navbar {
-    background-color: black;
+   
     color: white;
     position: fixed;
     z-index: 3;
@@ -13,6 +13,7 @@
     font-size: 1.2rem;
     font-weight: 500;
 }
+
 .navbar .menu button {
     border: none;
     font-size: 1rem;
@@ -20,10 +21,21 @@
     font-weight: 600;
 }
 .header {
-    background-color: black;
+    
         color: white;
-        min-height: 630px;
+      background: url('../assets/image/Frame_1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
 }
+
+.header-group ,.header-derktop{
+    position:absolute ;
+    bottom: 0;
+    right: 0;
+  
+}
+
 .header div button ,.footer div button{
     border:  none;
     background-color: white;
@@ -36,8 +48,8 @@
 }
 .dares {
     background: linear-gradient(to left bottom,rgb(254 1 130),rgb(255 94 176));
-                -webkit-background-clip: text;
-                color: transparent;
+   -webkit-background-clip: text;
+    color: transparent;
 }
 .contact p {
     font-weight: 600;
