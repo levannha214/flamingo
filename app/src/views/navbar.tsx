@@ -2,14 +2,15 @@ import "../styles/navbar.css";
 import { MenuOutlined } from "@ant-design/icons";
 interface props {
   desktop: boolean;
-  windowCroll: number;
+  status: boolean;
 }
-const Narbar: React.FC<props> = ({ desktop, windowCroll }) => {
+const Narbar: React.FC<props> = ({ desktop, status }) => {
   return (
     <nav
+      id={status ? "statusMenuOn" : "statusMenuOff"}
       className="col-12 col-sm-12 col-xl-12 col-xxl-12 col-md-12 col-lg-12 px-4 py-2 d-flex justify-content-between navbar"
       style={
-        windowCroll > 50
+        status
           ? { backgroundColor: "rgba(000, 000, 000, 100%)" }
           : { background: "none" }
       }

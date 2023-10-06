@@ -2,7 +2,7 @@ import "../styles/component.css";
 import image1 from "../assets/image/iPhone_12_04_Standard Mockup_1.png";
 import image2 from "../assets/image/iPhone_12_04 Standard Mockup_2_1.png";
 import image3 from "../assets/image/iPhone_12_04_Standard Mockup_3_1.png";
-import "../styles/component.css";
+
 import "../styles/scrollLoading.css";
 
 interface porps {
@@ -136,7 +136,10 @@ const BetterConvos: React.FC<porps> = ({
                     get the app
                   </span>
                 ) : (
-                  <button className="rounded-pill px-5 py-2 ">
+                  <button
+                    style={{ fontWeight: 500 }}
+                    className="rounded-pill px-5 py-2 "
+                  >
                     get the app
                   </button>
                 )}
@@ -198,6 +201,7 @@ const BetterConvos: React.FC<porps> = ({
                   <span className="">get the app</span>
                 ) : (
                   <button
+                    style={{ fontWeight: 500 }}
                     className={
                       windowCroll > 2600
                         ? "rounded-pill px-5 py-2 scrollWhiteTextTop"
@@ -248,7 +252,10 @@ const BetterConvos: React.FC<porps> = ({
                 windowCroll > 4700 ? "scrollBlackTextTop" : "waiting-line"
               }
             >
-              <button className="rounded-pill px-4 py-2 my-5">
+              <button
+                style={{ fontWeight: 500 }}
+                className="rounded-pill px-4 py-2 my-5"
+              >
                 get the app
               </button>
             </div>
@@ -291,7 +298,10 @@ const BetterConvos: React.FC<porps> = ({
                 windowCroll > 3900 ? "scrollBlackTextTop" : "waiting-line"
               }
             >
-              <button className="rounded-pill px-4 py-2 my-5">
+              <button
+                style={{ fontWeight: 500 }}
+                className="rounded-pill px-4 py-2 my-5"
+              >
                 get the app
               </button>
             </div>

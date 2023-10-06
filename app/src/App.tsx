@@ -22,6 +22,7 @@ function App() {
   const [windowCroll, setWindowCroll] = useState({
     windowScroll: window.scrollY,
   });
+  const [statusmenu, setStatusmenu] = useState(false);
 
   const detectSize = () => {
     setWindowDimention({
@@ -50,6 +51,12 @@ function App() {
     }
   };
   const handleScroll = () => {
+    if (window.scrollY > 50) {
+      setStatusmenu(true);
+    } else {
+      setStatusmenu(false);
+    }
+
     if (windowCroll.windowScroll < window.scrollY) {
       setWindowCroll({
         windowScroll: window.scrollY,
@@ -92,7 +99,7 @@ function App() {
   }, [windowDimention, windowCroll, mobile, desktop, large, pc]);
   return (
     <>
-      <Narbar desktop={desktop} windowCroll={windowCroll.windowScroll} />
+      <Narbar desktop={desktop} status={statusmenu} />
 
       <Header
         desktop={desktop}
