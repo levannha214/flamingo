@@ -215,9 +215,7 @@ const Howto: React.FC<porps> = ({ desktop, windowCroll, mobile, pc }) => {
           <div
             className="col-12 col-sm-12  p-5 question"
             style={
-              windowCroll > 6600
-                ? { height: 500, color: "#000" }
-                : { color: "#ffffff" }
+              windowCroll > 6600 ? { color: "#000" } : { color: "#ffffff" }
             }
           >
             <h1
@@ -234,9 +232,7 @@ const Howto: React.FC<porps> = ({ desktop, windowCroll, mobile, pc }) => {
           <div
             className="col-12 col-sm-12 col-md-12 col-lg-12 p-5 question"
             style={
-              windowCroll > 7900
-                ? { height: 500, color: "#000" }
-                : { color: "#ffffff" }
+              windowCroll > 7900 ? { color: "#000" } : { color: "#ffffff" }
             }
           >
             <h1
@@ -253,11 +249,7 @@ const Howto: React.FC<porps> = ({ desktop, windowCroll, mobile, pc }) => {
       ) : pc ? (
         <div
           className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-5 question"
-          style={
-            windowCroll > 12000
-              ? { height: 500, color: "#000" }
-              : { color: "#ffffff" }
-          }
+          style={windowCroll > 12000 ? { color: "#000" } : { color: "#ffffff" }}
         >
           <h1
             className={
@@ -272,11 +264,7 @@ const Howto: React.FC<porps> = ({ desktop, windowCroll, mobile, pc }) => {
       ) : (
         <div
           className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 p-5 question"
-          style={
-            windowCroll > 9400
-              ? { height: 500, color: "#000" }
-              : { color: "#ffffff" }
-          }
+          style={windowCroll > 9400 ? { color: "#000" } : { color: "#ffffff" }}
         >
           <h1
             className={

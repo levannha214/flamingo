@@ -82,11 +82,11 @@ const Footer: React.FC<props> = ({
               <div className="col-12 col-sm-12 px-5 py-4  d-flex flex-column bg-muted">
                 <div
                   style={
-                    windowCroll > 7400
+                    windowCroll > 6900
                       ? { color: "#ffffff" }
                       : { color: "#000" }
                   }
-                  className={windowCroll > 7400 ? "scrollWhiteTextRight" : ""}
+                  className={windowCroll > 6900 ? "scrollWhiteTextRight" : ""}
                 >
                   <h1
                     style={{
@@ -100,11 +100,11 @@ const Footer: React.FC<props> = ({
                 </div>
                 <div
                   style={
-                    windowCroll > 7450
+                    windowCroll > 6900
                       ? { color: "#ffffff" }
                       : { color: "#000" }
                   }
-                  className={windowCroll > 7450 ? "scrollWhiteTextRight" : ""}
+                  className={windowCroll > 6900 ? "scrollWhiteTextRight" : ""}
                 >
                   {" "}
                   <h5
@@ -120,7 +120,7 @@ const Footer: React.FC<props> = ({
                 <div className=" col-12 col-sm-12 d-flex justify-content-center">
                   <div
                     className={
-                      windowCroll > 7500
+                      windowCroll > 7000
                         ? "scrollWhiteTextRight"
                         : "waiting-line"
                     }
@@ -137,11 +137,11 @@ const Footer: React.FC<props> = ({
               <div className=" col-sm-12  col-md-12  px-3 py-2 ">
                 <div
                   style={
-                    windowCroll > 8400
+                    windowCroll > 7900
                       ? { color: "#ffffff" }
                       : { color: "#000" }
                   }
-                  className={windowCroll > 8400 ? "scrollWhiteTextRight" : ""}
+                  className={windowCroll > 7900 ? "scrollWhiteTextRight" : ""}
                 >
                   <h1
                     style={{
@@ -155,11 +155,11 @@ const Footer: React.FC<props> = ({
                 </div>
                 <div
                   style={
-                    windowCroll > 8450
+                    windowCroll > 7950
                       ? { color: "#ffffff" }
                       : { color: "#000" }
                   }
-                  className={windowCroll > 8450 ? "scrollWhiteTextRight" : ""}
+                  className={windowCroll > 7950 ? "scrollWhiteTextRight" : ""}
                 >
                   <h5
                     style={
@@ -182,7 +182,7 @@ const Footer: React.FC<props> = ({
                 <div className="col-sm-12 col-sm-12 col-md-12 my-3 d-flex justify-content-center">
                   <div
                     className={
-                      windowCroll > 8550
+                      windowCroll > 8050
                         ? "scrollWhiteTextRight"
                         : "waiting-line"
                     }
@@ -205,9 +205,9 @@ const Footer: React.FC<props> = ({
           >
             <div
               style={
-                windowCroll > 12600 ? { color: "#ffffff" } : { color: "#000" }
+                windowCroll > 12100 ? { color: "#ffffff" } : { color: "#000" }
               }
-              className={windowCroll > 12600 ? "scrollWhiteTextRight" : ""}
+              className={windowCroll > 12100 ? "scrollWhiteTextRight" : ""}
             >
               <h1
                 style={
@@ -221,15 +221,15 @@ const Footer: React.FC<props> = ({
             </div>
             <h5
               style={
-                windowCroll > 12650 ? { color: "#ffffff" } : { color: "#000" }
+                windowCroll > 12150 ? { color: "#ffffff" } : { color: "#000" }
               }
-              className={windowCroll > 12650 ? "scrollWhiteTextRight" : ""}
+              className={windowCroll > 12150 ? "scrollWhiteTextRight" : ""}
             >
               Available on iOS and Android
             </h5>
             <div
               className={
-                windowCroll > 12700 ? "scrollWhiteTextRight" : "waiting-line"
+                windowCroll > 12200 ? "scrollWhiteTextRight" : "waiting-line"
               }
             >
               {" "}
@@ -248,9 +248,9 @@ const Footer: React.FC<props> = ({
           >
             <div
               style={
-                windowCroll > 10000 ? { color: "#ffffff" } : { color: "#000" }
+                windowCroll > 9500 ? { color: "#ffffff" } : { color: "#000" }
               }
-              className={windowCroll > 10000 ? "scrollWhiteTextRight" : ""}
+              className={windowCroll > 9500 ? "scrollWhiteTextRight" : ""}
             >
               <h1
                 style={
@@ -264,15 +264,15 @@ const Footer: React.FC<props> = ({
             </div>
             <h5
               style={
-                windowCroll > 10050 ? { color: "#ffffff" } : { color: "#000" }
+                windowCroll > 9550 ? { color: "#ffffff" } : { color: "#000" }
               }
-              className={windowCroll > 10050 ? "scrollWhiteTextRight" : ""}
+              className={windowCroll > 9550 ? "scrollWhiteTextRight" : ""}
             >
               Available on iOS and Android
             </h5>
             <div
               className={
-                windowCroll > 10150 ? "scrollWhiteTextRight" : "waiting-line"
+                windowCroll > 9600 ? "scrollWhiteTextRight" : "waiting-line"
               }
             >
               {" "}
@@ -312,12 +312,12 @@ const Footer: React.FC<props> = ({
                   <div className="col-sm-12 col-md-12  col-12 d-flex justify-content-between">
                     <h5
                       className={
-                        windowCroll > 7750 + index * 60
+                        windowCroll > 7250 + index * 60
                           ? "scrollWhiteTextRight"
                           : ""
                       }
                       style={
-                        windowCroll > 7750 + index * 60
+                        windowCroll > 7250 + index * 60
                           ? { marginBottom: 30, color: "#ffffff" }
                           : { marginBottom: 30, color: "#000" }
                       }
@@ -351,12 +351,12 @@ const Footer: React.FC<props> = ({
                   <div className="col-sm-12 col-md-12  col-12 d-flex justify-content-between">
                     <h5
                       className={
-                        windowCroll > 8850 + index * 60
+                        windowCroll > 8350 + index * 60
                           ? "scrollWhiteTextRight"
                           : ""
                       }
                       style={
-                        windowCroll > 8850 + index * 60
+                        windowCroll > 8350 + index * 60
                           ? { marginBottom: 30, color: "#ffffff" }
                           : { marginBottom: 30, color: "#000" }
                       }
@@ -383,9 +383,9 @@ const Footer: React.FC<props> = ({
             ) : pc ? (
               <div className="col-xl-2 col-xxl-2 col-md-2 col-lg-2 p-2">
                 <h5
-                  className={windowCroll > 13100 ? "scrollWhiteTextRight" : ""}
+                  className={windowCroll > 12300 ? "scrollWhiteTextRight" : ""}
                   style={
-                    windowCroll > 13100
+                    windowCroll > 12300
                       ? { marginBottom: 30, color: "#ffffff" }
                       : { marginBottom: 30, color: "#000" }
                   }
@@ -395,7 +395,7 @@ const Footer: React.FC<props> = ({
                 {res.item.map((ret) => (
                   <p
                     className={
-                      windowCroll > 13100 + index * 50
+                      windowCroll > 12300 + index * 50
                         ? "scrollWhiteTextRight menuFooter"
                         : "text-dark"
                     }
@@ -408,9 +408,9 @@ const Footer: React.FC<props> = ({
             ) : (
               <div className="col-xl-2 col-xxl-2 col-md-2 col-lg-2 p-2">
                 <h5
-                  className={windowCroll > 10450 ? "scrollWhiteTextRight" : ""}
+                  className={windowCroll > 10250 ? "scrollWhiteTextRight" : ""}
                   style={
-                    windowCroll > 10450
+                    windowCroll > 10250
                       ? { marginBottom: 30, color: "#ffffff" }
                       : { marginBottom: 30, color: "#000" }
                   }
@@ -420,7 +420,7 @@ const Footer: React.FC<props> = ({
                 {res.item.map((ret) => (
                   <p
                     className={
-                      windowCroll > 10500 + index * 50
+                      windowCroll > 10200 + index * 50
                         ? "scrollWhiteTextRight menuFooter"
                         : "text-dark"
                     }
@@ -437,7 +437,7 @@ const Footer: React.FC<props> = ({
               mobile ? (
                 <div
                   className={
-                    windowCroll > 8000
+                    windowCroll > 7500
                       ? "col-12 col-md-12 d-flex justify-content-center  px-4 scrollBlackTextRight"
                       : " col-12 col-md-12 d-flex justify-content-center  px-4 waiting-line"
                   }
@@ -451,7 +451,7 @@ const Footer: React.FC<props> = ({
               ) : (
                 <div
                   className={
-                    windowCroll > 9300
+                    windowCroll > 8800
                       ? " co-sm-12 col-md-12 col-lg-12 d-flex justify-content-center  px-4 scrollBlackTextRight"
                       : " co-sm-12 col-md-12 col-lg-12 d-flex justify-content-center  px-4 waiting-line"
                   }
@@ -466,7 +466,7 @@ const Footer: React.FC<props> = ({
             ) : (
               <div
                 className={
-                  windowCroll > 9900
+                  windowCroll > 9400
                     ? " col-xl-12 col-lg-12 d-flex justify-content-center  px-4 scrollBlackTextTop"
                     : " col-xl-12 col-lg-12 d-flex justify-content-center  px-4 aiting-line"
                 }
@@ -494,7 +494,7 @@ const Footer: React.FC<props> = ({
             ) : pc ? (
               <div
                 className={
-                  windowCroll > 13400
+                  windowCroll > 12500
                     ? "col-xl-8 col-xxl-8 col-md-8 col-lg-8 d-flex justify-content-between scrollWhiteTextRight"
                     : "col-xl-8 col-xxl-8 col-md-8 col-lg-8 d-flex justify-content-between"
                 }
@@ -508,7 +508,7 @@ const Footer: React.FC<props> = ({
             ) : (
               <div
                 className={
-                  windowCroll > 10750
+                  windowCroll > 10500
                     ? "col-xl-8 col-xxl-8 col-md-8 col-lg-8 d-flex justify-content-between scrollWhiteTextRight"
                     : "col-xl-8 col-xxl-8 col-md-8 col-lg-8 d-flex justify-content-between"
                 }
@@ -526,7 +526,7 @@ const Footer: React.FC<props> = ({
                 mobile ? (
                   <span
                     className={
-                      windowCroll > 8050
+                      windowCroll > 7550
                         ? "scrollWhiteTextRight text-white"
                         : "text-dark"
                     }
@@ -537,7 +537,7 @@ const Footer: React.FC<props> = ({
                 ) : (
                   <span
                     className={
-                      windowCroll > 9300
+                      windowCroll > 8800
                         ? "scrollWhiteTextRight text-white"
                         : "text-dark"
                     }
@@ -549,7 +549,7 @@ const Footer: React.FC<props> = ({
               ) : pc ? (
                 <span
                   className={
-                    windowCroll > 13400
+                    windowCroll > 12900
                       ? "scrollWhiteTextRight text-white"
                       : "text-dark"
                   }
@@ -560,7 +560,7 @@ const Footer: React.FC<props> = ({
               ) : (
                 <span
                   className={
-                    windowCroll > 10750
+                    windowCroll > 10550
                       ? "scrollWhiteTextRight text-white"
                       : "text-dark"
                   }
